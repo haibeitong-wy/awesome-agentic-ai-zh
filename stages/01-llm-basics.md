@@ -119,7 +119,7 @@ jupyter notebook guide.ipynb
 | Maintainer | datawhalechina (Chinese ML community) |
 | Language | 中文 (zh-CN) |
 | Stars | ★ 23k+ |
-| Last update | ⚠️ Borderline (Jun 2025) |
+| Last update | ⚠️ Stale (Jun 2025; ~1 year inactive) |
 | License | Custom (CC BY-NC-SA) |
 | Recommendation | ⭐⭐⭐⭐ |
 
@@ -156,11 +156,11 @@ jupyter notebook guide.ipynb
 | Status | ⚠️ Archived (last update Aug 2024); outline only — never built out |
 | Recommendation | ⭐⭐ |
 
-**What it teaches**: Build a "Storyteller AI LLM" from scratch. Karpathy's signature pedagogical depth.
+**What it teaches**: Originally pitched as a build-from-scratch "Storyteller AI LLM" course in Karpathy's signature pedagogical style.
 
-**Best for**: Readers who want to truly understand LLMs (not just call API).
+**Best for**: Watch Karpathy's "Let's build GPT from scratch" YouTube video instead — that one is complete and excellent.
 
-**Notes**: Course is being built — currently has outline + some videos on YouTube. Watch Karpathy's "Let's build GPT from scratch" first.
+**Notes**: The repo is just an outline; the course was never built out. Listed for historical reference only.
 
 ---
 

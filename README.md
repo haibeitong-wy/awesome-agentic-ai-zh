@@ -1,11 +1,11 @@
 # awesome-agentic-ai-zh
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Status](https://img.shields.io/badge/status-WIP%20%C2%B7%20Phase%201-orange)](#roadmap)
+[![Status](https://img.shields.io/badge/status-WIP%20%C2%B7%20Phase%201-orange)](#phase-1-current-state)
 
 > A learning roadmap for agentic AI — from your first LLM API call to shipping multi-agent production systems. **Structured as a 7-stage path, not a flat list**, with curated projects, hello-world demos, and required reading at every stage.
 >
-> Written in English with curated Chinese-language entry points where they exist. A full Traditional Chinese (繁體中文) companion is Phase 2 work — see [ROADMAP](#roadmap).
+> Written in English. The Chinese-language resources currently cited are **zh-CN** (Datawhale, jjyaoao, KimYx0207). A native **zh-TW (Traditional Chinese)** companion translation is Phase 2 work.
 
 ---
 
@@ -18,10 +18,10 @@ This repo is a **structured learning roadmap**:
 - 7 stages from prerequisites to production
 - Hello-X projects you must run (not just read)
 - Curated projects categorized by stage and audience
-- Bilingual: English canonical + Traditional Chinese companion (繁中、非簡中)
-- Honest time estimates (約 14-19 週走完主幹)
+- English canonical with curated Chinese-language entry points where they exist
+- Honest time estimates (14-19 weeks minimum, 5-6 months realistic)
 
-If you're a **Chinese-speaking learner** trying to break into agentic AI without getting lost in the noise — this is for you.
+If you're a learner trying to break into agentic AI without getting lost in the noise — this is for you.
 
 ---
 
@@ -31,9 +31,9 @@ If you're a **Chinese-speaking learner** trying to break into agentic AI without
 Stage 0  Foundations           (Python · CLI · git · API · JSON)         1-2 週
 Stage 1  LLM Fundamentals      (tokens · API · model comparison)         1 週
 Stage 2  Prompt Engineering    (system prompts · few-shot · CoT)         1-2 週
-Stage 3  Tool Use & Hello Agent⭐  (function calling · ReAct · 5 hello-X) 2-3 週
+Stage 3  Tool Use & Hello Agent ⭐ (function calling · ReAct · 5 hello-X) 2-3 週
 Stage 4  Agent Frameworks      (LangGraph · AutoGen · CrewAI · ...)      2-3 週
-Stage 5  Claude Code Ecosystem⭐⭐  (MCP · Skills · Plugins)              3-4 週
+Stage 5  Claude Code Ecosystem ⭐⭐ (MCP · Skills · Plugins)              3-4 週
 Stage 6  Memory · RAG · Advanced (vector DBs · long-term memory)         2 週
 Stage 7  Multi-Agent · Production (orchestration · eval · deploy · SDK)  2-4 週
 ```
@@ -43,8 +43,14 @@ Stage 7  Multi-Agent · Production (orchestration · eval · deploy · SDK)  2-4
 After main path, choose a specialized branch:
 - 🔬 [For Researchers](branches/for-researcher.md)
 - 💻 [For Developers](branches/for-developer.md)
-- 🎓 [For Teachers](branches/for-teacher.md)
+- 🎓 [For Teachers](branches/for-teacher.md) — *currently the smallest section; community contributions especially welcome*
 - 📊 [For Knowledge Workers](branches/for-knowledge-worker.md)
+
+---
+
+## Note on self-citation
+
+About a sixth of the curated projects (~12 entries) are repos maintained by this catalog's author (`WenyuChiou/...`). They're included as concrete pattern examples (multi-plugin marketplace, single-plugin bundle, single-skill plugin, sub-CLI delegation, governance layer). Each entry's notes section explains the *pattern* it teaches. If a non-self repo teaches the same pattern more cleanly, please open a PR — see CONTRIBUTING.md.
 
 ---
 
@@ -110,9 +116,14 @@ This repo doesn't try to replace flat awesome lists. Use them when you already k
 
 ---
 
-## Note on self-citation
+## Phase 1: Current State
 
-About a sixth of the curated projects (~12 entries) are repos maintained by this catalog's author (`WenyuChiou/...`). They're included as concrete pattern examples (e.g., multi-plugin marketplace pattern, single-skill pattern, multi-agent orchestration). Each one's notes section explains what *pattern* it teaches. If a non-self repo teaches the same pattern more cleanly, please open a PR — see CONTRIBUTING.md.
+This is Phase 1 — the 7-stage spine with anchor curation (~80 projects). Phase 2 work:
+- Native zh-TW companion translation
+- 100+ additional curated projects
+- Self-citation reduction as community contributes alternatives
+- Stack-at-a-glance diagram in Stage 5
+- `resources/style-guide.md` for terminology consistency
 
 ## Contributing
 

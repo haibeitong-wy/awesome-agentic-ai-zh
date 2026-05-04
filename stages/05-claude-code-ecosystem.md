@@ -2,6 +2,31 @@
 
 ⏱ **Time estimate**: 3-4 weeks (~15-25 hours)
 
+## Stack at a glance
+
+```
+┌──────────────────────────────────────────────────┐
+│  Plugins / Marketplaces  (5.4 — packaging)       │
+├──────────────────────────────────────────────────┤
+│  Skills                  (5.3 — behavior)        │
+├──────────────────────────────────────────────────┤
+│  MCP                     (5.2 — protocol)        │
+├──────────────────────────────────────────────────┤
+│  Tool Use / Function Calling (Stage 3)           │
+├──────────────────────────────────────────────────┤
+│  Anthropic API + SDK     (Stage 1, Stage 7)      │
+├──────────────────────────────────────────────────┤
+│  LLM (Claude)                                    │
+└──────────────────────────────────────────────────┘
+```
+
+Each layer adds one capability:
+- **API + SDK**: programmatic access to the LLM
+- **Tool Use**: LLM can call functions you define
+- **MCP**: standardized protocol so any LLM host can use any tool server
+- **Skills**: behavior bundles for Claude Code that can wrap MCP tools
+- **Plugins**: package + ship Skills, hooks, commands, MCP configs as one unit
+
 This stage has 4 sub-sections. **Do them in order** — each builds on the previous.
 
 ```
@@ -11,7 +36,7 @@ This stage has 4 sub-sections. **Do them in order** — each builds on the previ
 5.4  Plugins & Marketplaces   5-7 days   (package and ship)
 ```
 
-After this stage you will be able to extend Claude Code, write your own MCP server, ship a plugin marketplace, and contribute to the ecosystem.
+After this stage you will be able to extend Claude Code, write your own MCP server, and ship a plugin marketplace.
 
 ---
 
@@ -332,7 +357,7 @@ A larger, battle-tested marketplace. Read its packaging structure.
 
 **What it teaches**: One of the largest community catalogs of Claude Code agents, skills, hooks, and templates. Wide breadth across many use cases.
 
-**Best for**: After Hello-3, browse for ecosystem awareness.
+**Best for**: After Hello-3, browse to see what's out there.
 
 ---
 
