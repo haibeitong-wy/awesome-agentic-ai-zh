@@ -37,7 +37,7 @@
   - [線上閱讀](#線上閱讀)
   - [本地下載](#本地下載)
   - [✨ 你會收穫什麼？](#-你會收穫什麼)
-- [🗺️ 學習地圖（兩條軌道）](#️-學習地圖兩條軌道)
+- [🗺️ 學習地圖（兩條學習路徑）](#️-學習地圖兩條學習路徑)
 - [💡 如何學習](#-如何學習)
 - [📚 相關資源](#-相關資源)
 - [🤝 如何貢獻](#-如何貢獻)
@@ -50,7 +50,7 @@
 ## 📚 快速開始
 
 ### 線上閱讀
-- **[學習地圖（兩條軌道）](#️-學習地圖兩條軌道)** — 看完這節決定走 Track A 還 Track B
+- **[學習地圖（兩條學習路徑）](#️-學習地圖兩條學習路徑)** — 看完這節決定走 Track A 還 Track B
 - **[Stage 0 基礎準備](stages/00-foundations.md)** — 已經會 Python / git / API 的人可以直接跳 Stage 1
 
 ### 本地下載
@@ -63,7 +63,7 @@ cd awesome-agentic-ai-zh
 ### ✨ 你會收穫什麼？
 
 - 📖 **完全免費** — MIT 授權，所有內容開放共學
-- 🗺️ **兩條學習軌道** — Track A（CLI Power User）給「想 USE 現成 CLI agent」的人；Track B（Agent Builder）給「想 BUILD 自己 agent」的人。共用 Stage 0-2 基礎
+- 🗺️ **兩條學習路徑** — Track A（CLI Power User）給「想 USE 現成 CLI agent」的人；Track B（Agent Builder）給「想 BUILD 自己 agent」的人。共用 Stage 0-2 基礎
 - 🛠️ **必跑 Hello-X demos** — 每階段都有 1-5 個必跑 mini project，光看不練不算學會
 - 🎯 **精選 145+ 個 projects** — 每個都附星等推薦、適合誰、教什麼、怎麼跑（含本地 LLM 執行：Ollama、llama.cpp、LocalAI、MLX）
 - 🌏 **中文 / 英文雙語** — 繁中為主、英文版完整對照
@@ -73,16 +73,16 @@ cd awesome-agentic-ai-zh
 
 ---
 
-## 🗺️ 學習地圖（兩條軌道）
+## 🗺️ 學習地圖（兩條學習路徑）
 
 ![AI Agent 學習地圖](resources/diagrams/learning-map.png)
 
-走完 **Stage 0-2（共用基礎）** 之後，依你的目的選一條軌道：
+走完 **Stage 0-2（共用基礎）** 之後，依你的目的選一條學習路徑：
 
 - **Track A — CLI Power User**：你想**用**現成的 CLI agent（Claude Code、Codex、OpenCode、Gemini CLI 等）把工作做順、效率拉高，不打算自己從零寫 agent。3 個 sub-stage（A1-A3）。
 - **Track B — Agent Builder**：你想**從零打造**自己的 agent——學 framework、寫 ReAct、設計 multi-agent。Stage 3-7 是主路線。
 
-兩條軌道**不互斥**——多數人是先走 A 把 CLI 用起來，再回到 B 學內部運作；或反過來也行。Stage 5（Claude Code 生態）兩條軌都會用到。
+兩條學習路徑**不互斥**——多數人是先走 A 把 CLI 用起來，再回到 B 學內部運作；或反過來也行。Stage 5（Claude Code 生態）兩條路徑都會用到。
 
 ### 共用基礎（Stage 0-2）
 
@@ -108,7 +108,7 @@ cd awesome-agentic-ai-zh
 |---|---|---|---|
 | **3** ⭐ | [Tool Use & Hello Agent](stages/03-tool-use-and-hello-agent.md) | function calling · ReAct · 5 個 Hello-X | 2-3 週 |
 | **4** | [Agent 框架](stages/04-agent-frameworks.md) | LangGraph · AutoGen · CrewAI · Smolagents | 2-3 週 |
-| **5** ⭐⭐ | [Claude Code 生態](stages/05-claude-code-ecosystem.md) | MCP · Skills · Plugins · Marketplace（兩條軌都會用到） | 3-4 週 |
+| **5** ⭐⭐ | [Claude Code 生態](stages/05-claude-code-ecosystem.md) | MCP · Skills · Plugins · Marketplace（兩條路徑都會用到） | 3-4 週 |
 | **6** | [Memory · RAG · 進階](stages/06-memory-rag.md) | vector DB · long-term memory · contextual retrieval | 2 週 |
 | **7** | [進階 Multi-Agent](stages/07-multi-agent-production.md) | multi-agent orchestration · eval · observability · SDK 進階 | 2-4 週 |
 
@@ -159,15 +159,34 @@ cd awesome-agentic-ai-zh
 
 ## 📚 相關資源
 
-這個 repo **不取代**單純的清單型 awesome list——你已經知道在找什麼工具時，下面這些查起來更直接：
+### 三個核心用語：MCP / Skills / Plugins
+
+README 跟各 stage 會頻繁提到這三個 Claude Code 生態的關鍵詞，先快速說明：
+
+- **MCP（Model Context Protocol）** — Anthropic 推的開放協定，讓任何 LLM host（Claude Code、其他 IDE、自寫 agent）都能用同一套介面去呼叫外部 tool server（檔案、DB、API、自家服務）。把它想成「LLM 的 USB 接口」。詳見 [Stage 5.2](stages/05-claude-code-ecosystem.md#52--mcpmodel-context-protocol-基礎)。
+- **Skills** — Claude Code 的「行為包」。一個 Skill 就是一份 `SKILL.md`，描述「在什麼情境要做什麼、可以呼叫哪些 MCP tool」。寫好之後 Claude Code 會自動 discover。詳見 [Stage 5.3](stages/05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層)。
+- **Plugins / Marketplaces** — 把 Skills、slash commands、hooks、MCP 設定打包成一個發佈單位給 team 或社群安裝。Marketplace 就是 plugin 的 catalog。詳見 [Stage 5.4](stages/05-claude-code-ecosystem.md#54--plugins-與-marketplaces)。
+
+對應的 Hello-X 練習都在 [Stage 5](stages/05-claude-code-ecosystem.md)，Track A 的 [A3](tracks/cli/A3-cli-production.md) 也會用到。
+
+### 同主題的清單型 awesome lists
+
+這個 repo **不取代**清單型 awesome list——你已經知道在找什麼工具時，下面這些查起來更直接：
+
+**MCP 相關**
+
+- [**modelcontextprotocol/servers**](https://github.com/modelcontextprotocol/servers) — 官方 MCP reference servers（filesystem、github、sqlite、git、fetch、memory 等）
+- [**wong2/awesome-mcp-servers**](https://github.com/wong2/awesome-mcp-servers) — 社群 MCP server 清單，按分類整理（150+ 個）
+- [**punkpeye/awesome-mcp-servers**](https://github.com/punkpeye/awesome-mcp-servers) — 另一份 MCP server 清單
+
+**Claude Code / Skills / Plugins 相關**
 
 - [**hesreallyhim/awesome-claude-code**](https://github.com/hesreallyhim/awesome-claude-code) — Claude Code 相關資源清單（整理中）
-- [**wong2/awesome-mcp-servers**](https://github.com/wong2/awesome-mcp-servers) — MCP server 清單
-- [**punkpeye/awesome-mcp-servers**](https://github.com/punkpeye/awesome-mcp-servers) — 另一份 MCP server 清單
 - [**travisvn/awesome-claude-skills**](https://github.com/travisvn/awesome-claude-skills) — Claude Skills 清單
-- [**modelcontextprotocol/servers**](https://github.com/modelcontextprotocol/servers) — 官方 MCP reference servers
+- [**anthropics/claude-plugins-official**](https://github.com/anthropics/claude-plugins-official) — Anthropic 官方 plugin 範本，要打包自己的 plugin 從這份開始
 
-中文社群必看：
+**中文社群必看**
+
 - [**datawhalechina/hello-agents**](https://github.com/datawhalechina/hello-agents) — Datawhale 系統性 agent 教學（zh-CN）
 - [**WangRongsheng/awesome-LLM-resources**](https://github.com/WangRongsheng/awesome-LLM-resources) — 完整的中文 LLM 資源整理（8k+ stars）
 - [**AiHubCN/Awesome-Chinese-LLM**](https://github.com/AiHubCN/Awesome-Chinese-LLM) — 中文開源大模型整理
