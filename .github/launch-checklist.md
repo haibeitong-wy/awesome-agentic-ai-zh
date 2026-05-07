@@ -53,15 +53,12 @@
 
 ## 🔁 Post-launch（持續）
 
-- [ ] 第一週每天 review issue
-- [ ] 每週合併 PR
-- [ ] 每月 1 號 CI 自動跑（已設定），檢查 link rot + star drift
-- [ ] 每季 review：
-  - 加 5-10 個新 entry（保持 130-160 範圍）
-  - update stale repos（archived / pushed > 6 months）
-  - 看有沒有自薦 stage maintainer 的 issue 要處理
-- [ ] 每半年 phase milestone：
-  - 內容明顯擴張、有 new audience 訊號 → 規劃 Phase 7
+這份是**參考節奏，不是 SLA**——能做就做、忙起來放著也沒關係。社群開放型 repo 不需要強制定期維護。
+
+- 有空時：review issue / 合併 PR
+- 偶爾跑：CI 已設定每月自動跑 link rot + star drift（被動的、不用人工）
+- 想做的時候：加幾個新 entry、清掉幾個 archived repo
+- 不必排定期程：phase milestone、新增 branch 等大改——有 traction 訊號再做
 
 ---
 

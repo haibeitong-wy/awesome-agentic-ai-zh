@@ -10,9 +10,9 @@
 
 ## 🌱 Stage 維護者 / Stage maintainers
 
-> 每個 stage 都歡迎社群志願者擔任**長期維護者**——負責定期 review、處理該 stage 的 issue、把關 PR。
+> 每個 stage 都歡迎社群志願者掛名**長期維護者**——有空時 review 一輪、處理該 stage 的 issue、把關 PR。沒有強制節奏。
 >
-> 想擔任某個 stage 的 maintainer？開個 issue 自薦，註明你願意每季 review 一次。
+> 想擔任 maintainer？開個 issue 自薦就好，不用承諾固定 review 期程——能做幾次就幾次。
 
 ### 共用基礎（Stage 0-2）
 

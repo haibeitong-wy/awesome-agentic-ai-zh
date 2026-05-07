@@ -12,12 +12,12 @@
 - **想看 MCP / Skills / Plugins 是什麼**：先看 [README 三個核心用語](../README.md#三個核心用語mcp--skills--plugins)，再看 [Stage 5 — Claude Code 生態系](../stages/05-claude-code-ecosystem.md)
 - **想看 動手練習 怎麼裝、怎麼測**：看 [Stage 5.2 (MCP)](../stages/05-claude-code-ecosystem.md#52--mcpmodel-context-protocol-基礎) 跟 [Stage 5.3 (Skills)](../stages/05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層)
 
-### 收錄原則
+### 收錄方向（不是死規則）
 
-- **官方優先**：Anthropic、廠商自己出的 MCP / Skill 排在前
-- **★ 100+ 起跳**：除非是官方，社群 repo 至少 100 stars 才收錄
-- **可驗證**：所有 stars / license 用 `gh api` 抓即時資料；過時的會在每季 review 時更新
-- **不收**：已 archived、超過 1 年沒 commit、license 不明且非官方
+- **官方優先**：Anthropic、廠商自己出的 MCP / Skill 通常排前面
+- **stars 看一下就好**：社群 repo 大致 100+ 比較有人在維護，但「小眾但好用」也歡迎送 PR 解釋為什麼要收
+- **盡量有 metadata**：stars / license 用 `gh api` 抓、有空就更新一輪
+- **避免（不是禁止）**：archived、長期沒 commit、license 不明的 repo——niche 工具可以例外
 
 ### 目錄
 
@@ -767,9 +767,12 @@ PR 送出前看一下 [`resources/style-guide.md`](style-guide.md) 跟 [`CONTRIB
 
 ---
 
-## 維護備註（給未來的 maintainer）
+## 維護備註（給未來想幫忙的人）
 
-- Stars / license 用 `gh api repos/<owner>/<repo>` 抓，每季 review 一次
-- 連結 broken / repo archived 的直接拿掉
-- 出現新分類（如 AR/VR、IoT 等）就加新一節，但 stars < 1k 且 < 3 個 entry 的分類先別開
-- 「中文圈專用」分類維持寬鬆（中文社群 repo 起 stars 較難）
+不是 SLA，是「能做就做」的方向：
+
+- Stars / license 用 `gh api repos/<owner>/<repo>` 抓，**有空 review 一輪就好**——不用排定期程
+- 連結壞了、repo archived → 看到再修
+- 新分類（AR/VR、IoT 等）有 1-2 個值得收的就可以先開
+- 「中文圈專用」分類維持寬鬆，中文社群 repo star 數累積較慢
+- 用詞、格式不一致 → 不要苛求，PR 進來能讀懂優先

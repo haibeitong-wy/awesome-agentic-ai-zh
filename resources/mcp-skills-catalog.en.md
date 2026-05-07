@@ -12,12 +12,12 @@
 - **Want to know what MCP / Skills / Plugins are**: see [README "Three core terms"](../README.en.md#three-core-terms-mcp--skills--plugins) first, then [Stage 5 — Claude Code Ecosystem](../stages/05-claude-code-ecosystem.en.md)
 - **Want 動手練習s (install + test)**: see [Stage 5.2 (MCP)](../stages/05-claude-code-ecosystem.en.md#52--mcp-model-context-protocol-foundation) and [Stage 5.3 (Skills)](../stages/05-claude-code-ecosystem.en.md#53--skills-claude-code-behavior-layer)
 
-### Inclusion criteria
+### Inclusion direction (not strict rules)
 
-- **Official first**: Anthropic / vendor-published MCP / Skill ranks higher
-- **★ 100+ floor**: community repos need 100+ stars; officials get a pass
-- **Verifiable**: stars / license fetched live via `gh api`; refreshed quarterly
-- **Excluded**: archived, no commit in 12+ months, unclear license + non-official
+- **Official first**: Anthropic / vendor-published MCP / Skill usually ranks higher
+- **Stars are a hint, not a gate**: community repos around 100+ tend to be maintained, but "niche but useful" repos are welcome via PR with a sentence explaining why
+- **Metadata when possible**: pull stars / license via `gh api`; refresh whenever
+- **Avoid (not forbidden)**: archived, long-stale, unclear-license repos — niche tools can be exceptions
 
 ### Index
 
@@ -767,9 +767,12 @@ Read [`resources/style-guide.md`](style-guide.en.md) and [`CONTRIBUTING.md`](../
 
 ---
 
-## Maintainer notes (for future maintainers)
+## Notes for anyone helping out later
 
-- Pull stars / license via `gh api repos/<owner>/<repo>` quarterly
-- Drop entries with broken links / archived repos
-- Open new categories (AR/VR, IoT, etc.) only when stars-by-coverage justifies it; below 1k stars + < 3 entries, hold off
-- "Chinese-language ecosystem" stays loose (Chinese-community repos collect stars more slowly)
+Not an SLA — just "do what you can" guidance:
+
+- Pull stars / license via `gh api repos/<owner>/<repo>`. **Refresh whenever you have time** — no fixed cadence.
+- Spot a broken link / archived repo? Just remove it.
+- New category (AR/VR, IoT, etc.) — open it once you have 1-2 entries worth listing.
+- "Chinese-language ecosystem" stays loose; Chinese-community repos accumulate stars more slowly.
+- Inconsistent wording or formatting between entries — don't sweat it. Readability of the PR comes first.
