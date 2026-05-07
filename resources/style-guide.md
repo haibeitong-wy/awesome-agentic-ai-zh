@@ -1,4 +1,4 @@
-> **繁體中文** | [English](./style-guide.en.md)
+> **繁體中文** | [简体中文](./style-guide.zh-CN.md) | [English](./style-guide.en.md)
 
 # `awesome-agentic-ai-zh` 風格指南
 
