@@ -109,7 +109,7 @@ Can you:
 - [ ] Packaged your CLAUDE.md / commands at least once (even just for yourself)
 - [ ] Know which tasks deserve observability and which don't
 
-If yes → **Track A complete**. Pick a [specialized branch](../../README.en.md#️-the-7-stage-learning-map) and continue (researcher / developer / teacher / knowledge-worker / everyday-users).
+If yes → **Track A complete**. Pick a [specialized branch](../../README.en.md#️-learning-map-two-tracks) and continue (researcher / developer / teacher / knowledge-worker / everyday-users).
 
 If you want to go deeper into "**how to write your own CLI agent**" (not use existing) → jump to [Track B Stage 3](../../stages/03-tool-use-and-hello-agent.en.md). Track A and Track B are complementary.
 

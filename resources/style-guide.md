@@ -188,6 +188,10 @@ PR 之前請先讀完本文。專案維護者也會用這份指南做 review。
 
 ## 6. Stage 頁面模板
 
+> 同一個模板適用於兩個位置：
+> - `stages/0X-*.md` — 共用基礎（0-2）+ Track B（Stage 3-7）
+> - `tracks/cli/AX-*.md` — Track A（A1-A3）的 sub-stage，也照同一模板，只是 cross-link 比例較高（多數 entry 引用既有 Stage 5 / 7 / cli-agents-guide）
+
 每個 stage（Stage 0 除外）都應該有：
 
 ```markdown

@@ -109,7 +109,7 @@ CLI 跑得順了之後，下一步：**把它接到你的真實工作流程裡**
 - [ ] 把你的 CLAUDE.md / commands 打包過至少一次（即使只有自己用）
 - [ ] 知道什麼任務值得加 observability、什麼不值得
 
-如果都可以 → **Track A 完整通關**。挑一個 [specialized branch](../../README.md#-7-階段學習地圖) 繼續走（researcher / developer / teacher / knowledge-worker / everyday-users）。
+如果都可以 → **Track A 完整通關**。挑一個 [specialized branch](../../README.md#️-學習地圖兩條軌道) 繼續走（researcher / developer / teacher / knowledge-worker / everyday-users）。
 
 如果想再深入「**怎麼寫自己的 CLI agent**」（不是用現有的）→ 跳到 [Track B Stage 3](../../stages/03-tool-use-and-hello-agent.md) 開始。Track A 跟 Track B 互補。
 

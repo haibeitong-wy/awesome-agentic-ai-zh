@@ -6,6 +6,68 @@
 
 ---
 
+## Track A 跟 Track B 的 2-track 結構
+
+從 Phase 7 開始 catalog 拆成兩條軌道。原本的 Stage 1-7 線性結構**還在**，但定位變成「**Track B — Agent Builder**」（從零打造 agent 的路線）。新增的 `tracks/cli/A1-A3` 是「**Track A — CLI Power User**」（用現成 CLI agent 把工作做完的路線）。
+
+### 為什麼分軌
+
+原本 7-stage 假設讀者都想「**從零打造 agent**」（寫 Python、選 framework、自己 deploy），但實際上：
+- 多數 AI agent 使用者**沒在自己寫 agent**——他們是 Claude Code / Cursor / ChatGPT 重度使用者
+- 「framework-heavy」內容（LangGraph / AutoGen / Smolagents 等 Stage 4 那塊）受眾比 CLI 工具小很多
+- 但「打造 agent」這條路還是有受眾（研究者、ML 工程師、想懂內部的人）
+
+所以 Phase 7 的決策：**不刪內容、加軌道**——保留 Track B 給 builder，新增 Track A 給 CLI user。
+
+### Track A 的 sub-stage 為什麼是 3 個（不是 5 個）
+
+**初版草稿（A1-A5）→ 合併後（A1-A3）**：
+
+| 草稿 | 草稿主題 | 最終歸屬 |
+|---|---|---|
+| A1 | CLI 入門 + 選擇 | → 最終 A1 |
+| A2 | Workflow（CLAUDE.md / slash command / 任務拆解 / portable prompt） | → 最終 A2 |
+| A3 | MCP 接 CLI | → 合進最終 A3 |
+| A4 | 多 CLI 並用 | → 合進最終 A3 |
+| A5 | Production CLI workflow（CI / cost / observability / plugin 打包） | → 合進最終 A3 |
+
+合併邏輯：
+- 草稿 A3 + A4 + A5 都是「**把 CLI 跟外部系統 / 流程接起來**」這同一件事的不同面向，砍 3 為 1 不會切碎概念
+- 草稿 A1 邊界清楚（入門 + 選擇），保留為最終 A1
+- 草稿 A2 邊界清楚（一個人在 CLI 內部如何工作），保留為最終 A2
+
+最終 3 個 stage：
+- **A1**：入門 + 選擇（CLI 安裝、認證、第一個任務）
+- **A2**：Workflow Patterns（CLAUDE.md / slash command / 多步拆解 / portable prompt）
+- **A3**：Integration & Production（MCP 接 CLI、多 CLI 並用、CI 自動化、cost / observability、plugin 打包）
+
+判準：**3 個 stage 邊界清楚、不互相浸蝕**，每個 stage 對應一個明確的「我能跑出什麼」outcome。
+
+### 為什麼 Stage 5 特別放在「兩軌共用」
+
+Stage 5（Claude Code 生態）兩條軌都會碰到：
+- Track A：A2 用 5.1（Claude Code 基礎）；A3 用 5.2（MCP）+ 選擇性用到 5.3（Skills）跟 5.4（Plugins）——A3 的 Hello-CLI-12 會教 plugin 打包。讀的角度是「**怎麼用 Claude Code 把工作做好**」
+- Track B：把整個 Stage 5 當「**Claude Code 內部運作**」的深度學，從 5.1 完整走到 5.4
+
+但兩條軌**不需要重新讀整份 Stage 5**——Track A 看「用法」、Track B 看「內部結構」。同一份內容，兩種讀法。
+
+### Track A 跟 Track B 的 entry curation 差別
+
+| | Track A（A1-A3） | Track B（Stage 3-7） |
+|---|---|---|
+| **entry 結構** | 大量 cross-link 到 Stage 5 / Stage 7 / cli-agents-guide | 完整獨立 entry（每個都有 schema 表格）|
+| **entry 數** | ~24 個（多為 cross-link） | ~80 個（多為獨立 entry） |
+| **新增 entry 標準** | 必須是 CLI agent 直接相關的工具 | framework / library / agent component |
+| **更新頻率** | 高（CLI 工具迭代快） | 中（framework 更新慢一些） |
+
+**判準**：Track A entry 出現的條件是「對 CLI workflow 有直接幫助」；Track B entry 出現的條件是「教讀者一個 agent design pattern」。
+
+### 5 條 specialized branch 為什麼兩軌共用
+
+走完 Track A 的 A3 或 Track B 的 Stage 7 後，都接到 5 條 branch（researcher / developer / teacher / knowledge-worker / everyday-users）。Branch entry 的 curation **不依軌道區分**——同一個工具不論是 Track A 用法還是 Track B 用法，都放在對應的 branch。
+
+---
+
 ## 為什麼是 7 個 stage（不是 5 個或 10 個）
 
 ### 太少（5 stage）的問題

@@ -1,6 +1,6 @@
 # For Researchers — Specialized Branch
 
-> [← Back to main path README](../README.en.md) · Branching from end of Stage 7. Apply agentic AI to research workflows.
+> [← Back to main path README](../README.en.md) · Continue here after **Track A's A3** or **Track B's Stage 7**. Apply agentic AI to research workflows.
 
 ## Use Cases
 

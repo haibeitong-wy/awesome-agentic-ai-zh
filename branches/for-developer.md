@@ -2,7 +2,7 @@
 
 > [English](./for-developer.en.md) | **繁體中文**
 
-> [← 回主路線 README](../README.md) · 從 Stage 7 結尾分支出來。把 agentic AI 應用到開發流程上。
+> [← 回主路線 README](../README.md) · 走完 **Track A 的 A3** 或 **Track B 的 Stage 7** 後從這裡接續。把 agentic AI 應用到開發流程上。
 
 ## 使用情境
 
@@ -14,7 +14,7 @@
 
 ## 精選 Projects
 
-> 6 個主流 CLI agent（Claude Code / Codex / OpenCode / Gemini CLI / goose / Aider）的並列比較見 [`resources/cli-agents-guide.md`](../resources/cli-agents-guide.md)。下面只列開發者該知道的關鍵 entry。
+> 6 個主流 CLI agent（Claude Code / Codex / OpenCode / Gemini CLI / goose / Aider）的並列比較見 [`resources/cli-agents-guide.md`](../resources/cli-agents-guide.md)。第一次接觸 CLI agent 想要 step-by-step 入門 → [`tracks/cli/A1-cli-intro.md`](../tracks/cli/A1-cli-intro.md)（Track A 第一站）。下面只列開發者該知道的關鍵 entry。
 
 ### Coding Agents
 

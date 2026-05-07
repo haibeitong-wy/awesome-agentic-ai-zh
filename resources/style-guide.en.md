@@ -154,6 +154,10 @@ Technical writing has terms that **read more naturally in English** than transla
 
 ## 6. Stage page template
 
+> The same template applies to two locations:
+> - `stages/0X-*.md` — shared foundations (0-2) + Track B (Stage 3-7)
+> - `tracks/cli/AX-*.md` — Track A (A1-A3) sub-stages also follow this template, with a higher proportion of cross-links (most entries reference existing Stage 5 / 7 / cli-agents-guide content)
+
 Every stage (except Stage 0) should have:
 
 ```markdown

@@ -1,6 +1,6 @@
 # For Developers — Specialized Branch
 
-> [← Back to main path README](../README.en.md) · Branching from end of Stage 7. Apply agentic AI to coding workflows.
+> [← Back to main path README](../README.en.md) · Continue here after **Track A's A3** or **Track B's Stage 7**. Apply agentic AI to coding workflows.
 
 ## Use Cases
 
@@ -12,7 +12,7 @@
 
 ## Curated Projects
 
-> Six major CLI agents (Claude Code / Codex / OpenCode / Gemini CLI / goose / Aider) compared side-by-side in [`resources/cli-agents-guide.en.md`](../resources/cli-agents-guide.en.md). Below lists only the key entries developers should know.
+> Six major CLI agents (Claude Code / Codex / OpenCode / Gemini CLI / goose / Aider) compared side-by-side in [`resources/cli-agents-guide.en.md`](../resources/cli-agents-guide.en.md). New to CLI agents and want step-by-step onboarding → [`tracks/cli/A1-cli-intro.en.md`](../tracks/cli/A1-cli-intro.en.md) (Track A first stop). Below lists only the key entries developers should know.
 
 ### Coding Agents
 

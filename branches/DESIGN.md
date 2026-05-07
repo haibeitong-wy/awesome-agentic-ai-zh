@@ -8,6 +8,17 @@
 
 ## 為什麼是 5 個 branch（不是 3 個或 10 個）
 
+### Branch 跟 Track 的關係
+
+5 條 branch 設計成 **兩條軌道走完都接得上**：
+- Track A 完成 A3 → 從 branches 選一條繼續
+- Track B 完成 Stage 7 → 從 branches 選一條繼續
+- Branch entry 的 curation 標準**不依軌道區分**——同一個工具不論是 Track A 用法（用現成 CLI）還是 Track B 用法（自己接 SDK），都放在對應 audience 的 branch 內
+
+**例外：for-everyday-users branch 可以直接進入**——不一定要走完軌道。這條 branch 的目標讀者是「Claude.ai / ChatGPT 重度使用者，想用 AI 但不一定想 build」，他們可能根本不需要碰 Track A 或 B；branch 內也明確標示「不一定要走完整條主幹」。其他 4 條 branch（researcher / developer / teacher / knowledge-worker）預設讀者已走完一條軌道。
+
+Branch maintainer 應該意識到：**進來看 branch 的讀者背景可能差很多**——剛走完 Track A 的人對 framework 內部不熟、剛走完 Track B 的人對 CLI 操作可能不熟、直接進 everyday-users 的人對 Stage 0-2 都可能跳過。Branch entry 的 prose 要盡量讓這幾種讀者都看得懂。
+
 ### 太少（≤3）的問題
 3 個會強行把多個 audience 塞同一條，譬如「professional」涵蓋 dev + researcher + knowledge worker——但他們的 pain point 完全不同。研究者要 grounded citation，開發者要 git-native，知識工作者要 email triage——硬擠成一條 branch 會讓 entry 互相 dilute。
 

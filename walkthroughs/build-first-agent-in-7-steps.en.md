@@ -6,6 +6,9 @@
 
 > [← Back to main path README](../README.en.md)
 
+> 📌 **This is for Track B (Agent Builder)** — teaches you to **write an agent from scratch**.
+> [Track A (CLI Power User)](../tracks/cli/A1-cli-intro.en.md) learners **do not need to run this**; but reading it gives deeper understanding of "**how an agent gets composed step-by-step from LLM API to production**" — optional advanced supplement.
+
 This is a **concrete cross-stage walkthrough** — the same agent, traced from Stage 1 through Stage 7, with executable code skeletons at each stage.
 
 > **How to read this**: each section extends the previous one. Later snippets assume earlier stage files are in the same directory. To run:

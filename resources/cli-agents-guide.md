@@ -6,7 +6,11 @@
 
 > [← 回主路線 README](../README.md)
 
-跨 5 個 branch 共用的參考——**Claude Code / Codex / OpenCode / Gemini CLI / goose / Aider 之間怎麼挑？** 每個 branch 都會用到 CLI agent，但沒有一個 branch 真的「擁有」這份比較，所以放在 `resources/`。
+> 📌 **這份是 reference doc**（深度比較、選擇邏輯、坑、推薦搭配）。
+> 第一次接觸 CLI agent、想要 step-by-step 上手 → 看 [`tracks/cli/A1-cli-intro.md`](../tracks/cli/A1-cli-intro.md)（Track A 第一站）。
+> 已經在用、想決定 / 比較 / 升級 → 留在這份。
+
+跨 5 個 branch + Track A 共用的參考——**Claude Code / Codex / OpenCode / Gemini CLI / goose / Aider 之間怎麼挑？** Track A（A1-A3）的 CLI workflow 設計、5 條 branch 內的 CLI 引用都連到這份；每個 branch 都會用到 CLI agent，但沒有一個 branch 真的「擁有」這份比較，所以放在 `resources/`。
 
 ---
 

@@ -2,7 +2,7 @@
 
 > [English](./for-researcher.en.md) | **繁體中文**
 
-> [← 回主路線 README](../README.md) · 從 Stage 7 結尾分支出來。把 agentic AI 應用到研究流程上。
+> [← 回主路線 README](../README.md) · 走完 **Track A 的 A3** 或 **Track B 的 Stage 7** 後從這裡接續。把 agentic AI 應用到研究流程上。
 
 ## 使用情境
 

@@ -6,6 +6,9 @@
 
 > [← 回主路線 README](../README.md)
 
+> 📌 **這份是給 Track B（Agent Builder）的**——教你**從零寫**一個 agent。
+> 走 [Track A（CLI Power User）](../tracks/cli/A1-cli-intro.md) 的人**不需要跑**這份；但讀過之後對「**agent 從 LLM API 到 production 怎麼一步步組起來**」會有更深的理解，可作為 optional 進階補充。
+
 這是一份**跨 7 個 stage 的具體 walkthrough**——同一個 agent，從 Stage 1 寫到 Stage 7，每個 stage 都附可執行的程式碼骨架。
 
 > **怎麼讀這份**：每一節都是上一節的延伸。後面 stage 的 snippet 預設你已經有前面 stage 的檔案在同一個資料夾。要實際跑：
