@@ -52,11 +52,12 @@
 
 ## 💬 內容貢獻者 / Content contributors
 
-> 每次 merged PR 都會在這裡留名。第一次 PR 不分大小都會列入。
+> 每次 merged PR 或實質 issue 修正都會在這裡留名。第一次 contribution 不分大小都會列入。
 
-| Contributor | 貢獻 / Contribution | First PR |
+| Contributor | 貢獻 / Contribution | First contribution |
 |---|---|---|
 | [@scott0127](https://github.com/scott0127) | **Stage 6 RAG 教材** — chunking strategies guide ([#2](https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/2))、unit guide overview ([#5](https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/5)) · **for-teacher 框架** — 3-tier 教師 AI 應用情境 + 學術引用 (Chen 2020 / Mittal 2024) ([#6](https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/6)) | 2026-05-08 |
+| [@xfq](https://github.com/xfq) | **i18n correctness audit** — flagged BCP 47 / W3C compliance issue (`zh-CN` → `zh-Hans`) and provided the script subtag rationale ([#9](https://github.com/WenyuChiou/awesome-agentic-ai-zh/issues/9)). [W3C i18n lead](https://www.w3.org/International/). | 2026-05-10 |
 
 ---
 
