@@ -26,8 +26,8 @@
 | 2 | [liyupi/ai-guide](outreach/liyupi.md) | GitHub PR | not contacted | — | — | — | ★13k mainland resource hub |
 | 3 | [HuggingFace 中文社群](outreach/huggingface-zh.md) | HF community/discuss | not contacted | — | — | — | English ecosystem hub w/ growing zh segment |
 | 4 | [LangChain (kyrolabs/awesome-langchain)](outreach/langchain-ai.md) | GitHub PR | not contacted | — | — | — | Stage 4 covers LangChain; §11 lists Langchain-Chatchat |
-| 5 | [hesreallyhim/awesome-claude-code](outreach/awesome-claude-code.md) | GitHub PR | not contacted | — | — | — | Already cited reciprocally in our README |
-| 6 | [wong2/awesome-mcp-servers](outreach/awesome-mcp-servers.md) | GitHub PR | not contacted | — | — | — | Already cited in our README |
+| 5 | [hesreallyhim/awesome-claude-code](outreach/awesome-claude-code.md) | GitHub **issue** | not contacted | — | — | — | ⚠️ Repo mid-reorg — open issue (not PR), park for new TOC |
+| 6 | [punkpeye/awesome-mcp-servers](outreach/awesome-mcp-servers.md) | GitHub PR | not contacted | — | — | — | ★86k+, has `## Tutorials` section. Skip wong2/awesome-mcp-servers (server-only policy, off-fit) |
 | 7 | [Zhipu BigModel community](outreach/zhipu.md) | dev community / 知乎 | not contacted | — | — | — | Inviting them to PR a Zhipu agent entry to §11 |
 | 8 | [Moonshot Kimi](outreach/moonshot.md) | dev community / 知乎 | not contacted | — | — | — | Inviting them to PR a Kimi agent entry to §11 |
 
@@ -41,16 +41,24 @@
 - If 5 replies land in week 1, that's a good problem; if 0 land, we don't burn
   all our cards before learning what's not working.
 
-Suggested first-week order (low-risk → high-risk):
+Suggested first-week order (low-risk → high-risk, **revised 2026-05-09**
+after upstream-target audit caught the awesome-claude-code reorg):
 
-1. Day 1: [#5 awesome-claude-code](outreach/awesome-claude-code.md) — already
-   reciprocally cited, lowest risk
-2. Day 2: [#6 awesome-mcp-servers](outreach/awesome-mcp-servers.md) — same
-3. Day 3: [#1 Datawhale](outreach/datawhale.md) — most strategic for zh-CN reach
-4. Day 4: [#2 liyupi](outreach/liyupi.md) — high reach if accepted
-5. Day 5: [#4 LangChain (kyrolabs)](outreach/langchain-ai.md)
-6. Day 6: pause — review responses to date
-7. Day 7+: [#3 HuggingFace](outreach/huggingface-zh.md), then [#7 Zhipu](outreach/zhipu.md), [#8 Moonshot](outreach/moonshot.md) only after digesting earlier feedback
+1. **Day 1**: [#6 punkpeye/awesome-mcp-servers PR](outreach/awesome-mcp-servers.md)
+   — has `## Tutorials` section, ★86k repo, reciprocal cite already exists.
+   Lowest-risk concrete-action target.
+2. **Day 2**: [#5 awesome-claude-code **issue**](outreach/awesome-claude-code.md)
+   — repo mid-reorg, no PR-able sections; open an issue parking the proposal
+   for when their new TOC lands.
+3. **Day 3**: [#1 Datawhale](outreach/datawhale.md) — most strategic for zh-CN
+   reach (we cite Hello-Agents Extra05/08).
+4. **Day 4**: [#2 liyupi](outreach/liyupi.md) — high reach if accepted (★13k
+   resource hub).
+5. **Day 5**: [#4 LangChain (kyrolabs/awesome-langchain)](outreach/langchain-ai.md).
+6. **Day 6**: pause — review responses to date.
+7. **Day 7+**: [#3 HuggingFace](outreach/huggingface-zh.md), then
+   [#7 Zhipu](outreach/zhipu.md), [#8 Moonshot](outreach/moonshot.md) only
+   after digesting earlier feedback.
 
 ## Update protocol
 

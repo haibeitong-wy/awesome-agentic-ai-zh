@@ -1,11 +1,17 @@
 # Outreach: hesreallyhim/awesome-claude-code
 
-> **Status**: not contacted · **Channel**: GitHub PR
+> **Status**: not contacted · **Channel**: GitHub **issue** (NOT PR — see note below)
 > **Primary lang**: en
 > **Last updated**: 2026-05-09
-> **Repo**: https://github.com/hesreallyhim/awesome-claude-code
+> **Repo**: https://github.com/hesreallyhim/awesome-claude-code (★43k+)
 
-**Why this target**: We already cite their list in our README's "Related projects" section (and in zh-CN / zh-TW counterparts). Reciprocal listing is natural. They're the canonical Claude Code awesome-list.
+> ⚠️ **REPO IS MID-REORG (verified 2026-05-09)** — their current README says
+> "The previous Table of Contents was no longer fit for purpose, so a new
+> organizational system is being prepared." There are no live sections to
+> PR an entry into. **Don't open a PR.** Open an **issue** instead, parking
+> the proposal for when the new TOC lands.
+
+**Why this target**: We already cite their list in our README's "Related projects" section (and in zh-CN / zh-TW counterparts). Reciprocal listing is natural. They're the canonical Claude Code awesome-list with ★43k.
 
 **Pitch angle**: We're a **structured learning roadmap** complement to their flat catalog. Stage 5 of our roadmap is dedicated to the Claude Code ecosystem (MCP, Skills, Plugins).
 
@@ -24,45 +30,43 @@ a 7-stage trilingual learning roadmap that walks Stage 0 (foundations) → Stage
 🔗 github.com/WenyuChiou/awesome-agentic-ai-zh
 ```
 
-## Variant 2 — GitHub PR (200-300 words)
+## Variant 2 — GitHub **issue** (200-300 words) [USE THIS, NOT A PR]
 
-**PR title**: Add awesome-agentic-ai-zh to Learning Resources
+**Issue title**: Proposal: add a "Learning Resources" / "Tutorials" section in the new TOC — would awesome-agentic-ai-zh fit?
 
-**Diff**: (assumes a "Learning Resources" or similar tutorials section exists)
-
-```diff
-+ - [`WenyuChiou/awesome-agentic-ai-zh`](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-+   — Trilingual (zh-TW canonical · zh-CN · English) 7-stage learning roadmap
-+   for agentic AI. Stage 5 is dedicated to the Claude Code ecosystem (MCP,
-+   Skills, Plugins, Hello-World walkthroughs); the catalog includes 62
-+   integrations grouped by 14 use cases.
-```
-
-**PR description**:
+**Issue body**:
 
 ```markdown
 Hi @hesreallyhim,
 
+Saw the reorg notice on the README — congrats on the cleanup, the previous
+TOC had drifted hard. Holding off on opening a PR until the new TOC lands.
+
+Wanted to surface a proposal for when you're ready:
+
+I maintain [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
+— a trilingual (zh-TW canonical · zh-CN · English) 7-stage learning roadmap
+for agentic AI. **Stage 5 is dedicated entirely to the Claude Code ecosystem**
+(MCP, Skills, Plugins, Hello-World walkthroughs, 62-entry integration catalog
+by use case).
+
 awesome-claude-code is already in our `Related projects` section
-([README.md L210](https://github.com/WenyuChiou/awesome-agentic-ai-zh/blob/main/README.md))
-— we cite you as the go-to flat catalog of Claude Code tooling.
+([our README](https://github.com/WenyuChiou/awesome-agentic-ai-zh/blob/main/README.md))
+— we cite you as the go-to flat catalog. We'd be the structured learning
+complement.
 
-Our repo, [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh),
-is **structurally complementary**:
+Two questions for the new TOC design:
+1. Will the new TOC have a "Learning Resources" / "Tutorials" / "Curricula"
+   section? If yes, a one-line entry there would close the reciprocal loop.
+2. If the new TOC keeps the list strictly tooling-only, totally understand
+   — happy to drop this. No follow-up needed in that case.
 
-- 7-stage learning roadmap, not a flat catalog
-- **Stage 5 is dedicated entirely to Claude Code** — MCP/Skills/Plugins,
-  Hello-World walkthroughs, hands-on exercises, ecosystem table of 62
-  integrations by use case
-- Trilingual (zh-TW / zh-CN / en), MIT, ★525 week 1
-
-If you have a "Learning Resources" or "Tutorials" section, this would fit
-there. If not, no worries — just wanted to surface it given the existing
-cross-cite.
+No urgency. Reply when the new TOC is done. Thanks for maintaining this list
+— it's a public good for the Claude Code community.
 
 Stats for credibility (week 1): 6,869 views / 3,185 unique visitors / 1,099
-clones / 408 unique cloners / 50 forks / 3 community contributors. CI runs
-banned-word audit + link-rot check on every PR.
+clones / 408 unique cloners / 50 forks / 3 community contributors. MIT,
+trilingual translation discipline, CI lint on every PR.
 
 — Wenyu (PhD candidate, individual maintainer)
 ```
@@ -86,9 +90,11 @@ Learning Resources section makes sense, just opened a PR
 
 ## Notes
 
-- Confirm "Learning Resources" section exists (or equivalent) before opening PR
-- If they don't have a tutorials section, propose adding one rather than
-  shoehorning into wrong slot
-- **Don't double-pitch** — one PR + one Twitter DM if no response in 5 days,
-  then drop it
-- @hesreallyhim is responsive — PRs typically reviewed within ~3 days
+- **Repo status as of 2026-05-09**: README is a placeholder ("Update in
+  progress"; TOC marked "I. TODO"). Maintainer @hesreallyhim is rebuilding
+  the organizational system. **OPEN AN ISSUE, NOT A PR.**
+- The issue is a parking proposal — re-engage when the new TOC ships
+- @hesreallyhim historically responsive (~3 days); during reorg, expect slower
+- If they reply "the new TOC won't have a learning resources section" — thank
+  them, drop it, move on. Don't push.
+- After they reply (positive or negative), update `.github/channel-partners.md`

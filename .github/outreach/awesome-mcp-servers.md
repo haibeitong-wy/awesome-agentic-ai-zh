@@ -1,17 +1,16 @@
-# Outreach: wong2/awesome-mcp-servers + punkpeye/awesome-mcp-servers
+# Outreach: punkpeye/awesome-mcp-servers (PRIMARY)
 
 > **Status**: not contacted · **Channel**: GitHub PR
 > **Primary lang**: en
 > **Last updated**: 2026-05-09
-> **Repos**:
-> - https://github.com/wong2/awesome-mcp-servers
-> - https://github.com/punkpeye/awesome-mcp-servers (alternative — pick whichever has more activity)
+> **Primary repo**: https://github.com/punkpeye/awesome-mcp-servers (★86k+, MIT, has "Tutorials" section)
+> **Secondary (skip for now)**: wong2/awesome-mcp-servers (★4k, MIT, **server-only policy** — no Tutorials section, off-policy for us)
 
-**Why this target**: We already cite both in our README's "Related projects" section (mutual benefit baked in). They're the canonical MCP server catalogs. Our angle: we're the **how-to-learn-MCP** complement.
+**Why this target**: We already cite both in our README's "Related projects" section (mutual benefit baked in). punkpeye is the canonical large MCP catalog and **has an explicit `## Tutorials` section** that fits us. wong2 is a stricter server-only fork — we'll skip that one to respect their list shape.
 
 **Pitch angle**: Their readers want to use MCP servers; we teach them how MCP works first (Stage 5.2 of our roadmap). Our §5.2 walkthrough → their flat catalog is a natural funnel.
 
-**Their counter-value**: Reciprocal cross-link; better onboarding for their readers.
+**Their counter-value**: Reciprocal cross-link; better onboarding for their ★86k readers.
 
 ---
 
@@ -29,26 +28,27 @@ catalog browsing.
 
 ## Variant 2 — GitHub PR (200-300 words)
 
-**PR title**: Add awesome-agentic-ai-zh to Learning Resources / Tutorials section
+**Target file**: `README.md` — `## Tutorials` section
+**PR title**: Add awesome-agentic-ai-zh to Tutorials — trilingual 7-stage learning roadmap
 
-**Diff** (location depends on which list you target — assume a tutorials section):
+**Diff** (insert in alphabetical or chronological position within `## Tutorials`):
 
 ```diff
-+ - [`WenyuChiou/awesome-agentic-ai-zh`](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-+   — Trilingual (zh-TW · zh-CN · en) 7-stage learning roadmap. Stage 5.2 is a
-+   dedicated walkthrough of MCP (concept → first install → writing your own
-+   server), with prerequisites and time estimates. Catalog includes 62
++ - [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
++   — Trilingual (zh-TW · zh-CN · en) 7-stage learning roadmap. Stage 5.2 is
++   a dedicated walkthrough of MCP (concept → first install → writing your
++   own server), with prerequisites and time estimates. Catalog includes 62
 +   integrations grouped by use case.
 ```
 
 **PR description**:
 
 ```markdown
-Hi @wong2 (or @punkpeye),
+Hi @punkpeye,
 
 awesome-mcp-servers is already in our `Related projects` section
 ([README.md](https://github.com/WenyuChiou/awesome-agentic-ai-zh/blob/main/README.md))
-— we cite you as a primary catalog for MCP server discovery.
+— we cite you as the primary catalog for MCP server discovery.
 
 Our repo is the **structured learning complement**:
 
@@ -59,11 +59,9 @@ Our repo is the **structured learning complement**:
   for their stack
 - Trilingual (zh-TW / zh-CN / en), MIT, ★525 week 1
 
-If you have a tutorials / learning-resources section, this fits there. If
-your list is server-only by policy, totally understand — just close the PR.
-
-Reciprocal cross-link is the goal: your readers get a learning order; ours
-get the canonical server catalog.
+Targeting your `## Tutorials` section (line ~XX in README) since this is a
+"how to learn MCP" resource, not a server. If a different section fits
+better, just redirect — happy to update.
 
 Stats (week 1): 6,869 views / 3,185 unique / 1,099 clones / 408 unique cloners
 / 50 forks. CI runs banned-word audit + link-rot check on every PR.
@@ -74,14 +72,14 @@ Stats (week 1): 6,869 views / 3,185 unique / 1,099 clones / 408 unique cloners
 ## Variant 3 — DM / Twitter (150 words)
 
 ```
-@wong2 — your awesome-mcp-servers list is already in our README's "Related
-projects". I run awesome-agentic-ai-zh: a trilingual 7-stage learning roadmap
-with Stage 5.2 dedicated to MCP (walkthrough → install → writing your own
-server, with cost/time estimates).
+@punkpeye — your awesome-mcp-servers list is already in our README's
+"Related projects". I run awesome-agentic-ai-zh: a trilingual 7-stage
+learning roadmap with Stage 5.2 dedicated to MCP (walkthrough → install →
+writing your own server, with cost/time estimates).
 
-After Stage 5.2 our readers are sent to your catalog. Reciprocal link in your
-Learning Resources / Tutorials section would be natural — opened a PR
-(<link>). Close it if it doesn't fit your list's policy.
+After Stage 5.2 our readers are sent to your catalog. Reciprocal link in
+your Tutorials section would be natural — opened a PR (<link>). Close it
+if it doesn't fit.
 
 — Wenyu
 ```
@@ -90,9 +88,13 @@ Learning Resources / Tutorials section would be natural — opened a PR
 
 ## Notes
 
-- **Pick one fork** — both are popular. Check recent commit activity and pick
-  whichever maintainer is more active (gh api repos/<owner>/<repo>)
-- If the list is policy-strict (servers only, no tutorials), don't push —
-  thank, close, move on
+- **Targeting punkpeye, not wong2** — punkpeye has a `## Tutorials` section
+  (★86k repo, very large reach); wong2 is server-only-policy by design (★4k,
+  no tutorials section, off-policy for our pitch)
+- Confirm the line number / position of `## Tutorials` in punkpeye's README
+  before opening PR — alphabetical sort within the section is the convention
+- punkpeye is responsive — PRs typically reviewed within ~7 days
 - If they accept, mirror cross-cite by ensuring our README still references
   them (already done as of 2026-05-09)
+- If they redirect to a different section, follow their guidance — don't
+  push back
