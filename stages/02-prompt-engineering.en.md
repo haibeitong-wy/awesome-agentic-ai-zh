@@ -40,18 +40,19 @@ You should already:
 ### Exercise 1: System Prompt
 Same user message, three different system prompts. Watch the personality / output format change.
 
-<details>
-<summary>📋 <b>Starter code</b> (copy to <code>practice_1.py</code>)</summary>
+<details open>
+<summary>📋 <b>Starter code — Path A (local Ollama gemma3n:e4b, default)</b> (copy to <code>practice_1.py</code>)</summary>
 
 ```python
-# Requires: pip install anthropic
+# Requires: pip install openai
+# Pre-req: ollama pull gemma3n:e4b && ollama serve
 import sys
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-import anthropic
+from openai import OpenAI
 
-client = anthropic.Anthropic()
+client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
 
 SYSTEM_PROMPTS = {
     "Strict lawyer": "You are a precise contract lawyer. Cite statute numbers, avoid subjective adjectives.",
@@ -61,19 +62,24 @@ SYSTEM_PROMPTS = {
 
 USER_MSG = "Explain what a lease agreement is."
 
+outputs = {}
 for label, system in SYSTEM_PROMPTS.items():
-    msg = client.messages.create(
-        model="claude-haiku-4-5",
+    # Ollama (OpenAI-compatible) puts system in the messages array (Anthropic uses system=)
+    r = client.chat.completions.create(
+        model="gemma3n:e4b",
         max_tokens=200,
-        system=system,
-        messages=[{"role": "user", "content": USER_MSG}],
+        messages=[
+            {"role": "system", "content": system},
+            {"role": "user", "content": USER_MSG},
+        ],
     )
+    outputs[label] = r.choices[0].message.content
     print(f"\n--- [{label}] ---")
-    print(msg.content[0].text)
+    print(outputs[label])
 
 # === Self-check ===
 import json
-last_text = msg.content[0].text  # last iteration = JSON machine
+last_text = outputs["JSON machine"]
 assert "{" in last_text and "}" in last_text, "JSON-machine output should contain JSON braces"
 try:
     parsed = json.loads(last_text.strip().split("\n")[-1] if "\n" in last_text else last_text)
@@ -84,25 +90,26 @@ except json.JSONDecodeError:
 print(f"\n✅ Exercise 1 passed — same question, three different personas / formats / tones")
 ```
 
-> 🦙 **Ollama equivalent**: Anthropic uses a `system=` parameter; OpenAI-compatible SDKs (including Ollama) put system in the first message: `messages=[{"role": "system", "content": ...}, {"role": "user", "content": ...}]`. Everything else is identical.
+> 🟦 **Anthropic Path B**: switch the import + client (`import anthropic; client = anthropic.Anthropic()`) and call `client.messages.create(model="claude-haiku-4-5", system=system, messages=[...], max_tokens=200)` (note: `system=` is a parameter, not part of `messages`). Use `msg.content[0].text` for the response. **Cost**: ~$0.003 / 3 personas. Claude follows system prompts more strictly than gemma3n:e4b.
 
 </details>
 
 ### Exercise 2: Few-Shot
 Pick a classification task. Run it 0-shot, then 3-shot. Measure accuracy difference.
 
-<details>
-<summary>📋 <b>Starter code</b> (copy to <code>practice_2.py</code>)</summary>
+<details open>
+<summary>📋 <b>Starter code — Path A (local Ollama gemma3n:e4b, default)</b> (copy to <code>practice_2.py</code>)</summary>
 
 ```python
-# Requires: pip install anthropic
+# Requires: pip install openai
+# Pre-req: ollama pull gemma3n:e4b && ollama serve
 import sys
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-import anthropic
+from openai import OpenAI
 
-client = anthropic.Anthropic()
+client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
 
 # Sentiment classifier: positive / negative / neutral
 TEST_SET = [
@@ -129,12 +136,12 @@ output: neutral
 def classify(text: str, *, use_few_shot: bool) -> str:
     prefix = FEW_SHOT_EXAMPLES + "\n" if use_few_shot else ""
     prompt = f"{prefix}input: {text}\noutput:"
-    msg = client.messages.create(
-        model="claude-haiku-4-5",
+    r = client.chat.completions.create(
+        model="gemma3n:e4b",
         max_tokens=10,
         messages=[{"role": "user", "content": prompt}],
     )
-    return msg.content[0].text.strip().splitlines()[0]
+    return r.choices[0].message.content.strip().splitlines()[0]
 
 
 def evaluate(use_few_shot: bool) -> tuple[int, int]:
@@ -171,18 +178,19 @@ Pick a math word problem. Compare:
 - Plain prompt + "Let's think step by step"
 - Plain prompt + worked example showing CoT
 
-<details>
-<summary>📋 <b>Starter code</b> (copy to <code>practice_3.py</code>)</summary>
+<details open>
+<summary>📋 <b>Starter code — Path A (local Ollama gemma3n:e4b, default)</b> (copy to <code>practice_3.py</code>)</summary>
 
 ```python
-# Requires: pip install anthropic
+# Requires: pip install openai
+# Pre-req: ollama pull gemma3n:e4b && ollama serve
 import sys, re
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-import anthropic
+from openai import OpenAI
 
-client = anthropic.Anthropic()
+client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
 
 QUESTION = "Tom has 3 apples. He gives Sarah 1, then mom gives him 5 more, then he eats 2. How many does he have now?"
 ANSWER = 5  # 3 - 1 + 5 - 2 = 5
@@ -194,12 +202,12 @@ A: Let me work through this step by step. 3 chickens × 2 legs = 6 legs. 1 perso
 
 
 def ask(prompt: str) -> str:
-    msg = client.messages.create(
-        model="claude-haiku-4-5",
+    r = client.chat.completions.create(
+        model="gemma3n:e4b",
         max_tokens=300,
         messages=[{"role": "user", "content": prompt}],
     )
-    return msg.content[0].text
+    return r.choices[0].message.content
 
 
 def extract_number(text: str) -> int | None:
@@ -235,18 +243,19 @@ print(f"\n✅ Exercise 3 passed — {correct}/3 correct")
 ### Exercise 4: Iterative Refinement
 Take a vague prompt, refine it 5 times. Track the iterations. Notice what changes improve quality.
 
-<details>
-<summary>📋 <b>Starter code</b> (copy to <code>practice_4.py</code>) — this exercise has no "right answer"; the point is observing the process</summary>
+<details open>
+<summary>📋 <b>Starter code — Path A (local Ollama gemma3n:e4b, default)</b> (copy to <code>practice_4.py</code>) — this exercise has no "right answer"; the point is observing the process</summary>
 
 ```python
-# Requires: pip install anthropic
+# Requires: pip install openai
+# Pre-req: ollama pull gemma3n:e4b && ollama serve
 import sys
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-import anthropic
+from openai import OpenAI
 
-client = anthropic.Anthropic()
+client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
 
 # 5 iterations, each adds one constraint
 PROMPTS = {
@@ -259,12 +268,12 @@ PROMPTS = {
 
 outputs = {}
 for label, prompt in PROMPTS.items():
-    msg = client.messages.create(
-        model="claude-haiku-4-5",
+    r = client.chat.completions.create(
+        model="gemma3n:e4b",
         max_tokens=200,
         messages=[{"role": "user", "content": prompt}],
     )
-    text = msg.content[0].text
+    text = r.choices[0].message.content
     outputs[label] = text
     print(f"\n--- [{label}] ({len(text)} chars) ---")
     print(text)
