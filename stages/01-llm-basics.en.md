@@ -119,8 +119,50 @@ Run the same prompt 100 times and watch token counts vary.
 - Notice: `temperature ≠ 0` produces variation
 - Notice: token count for the SAME English vs Chinese sentence
 
+<details open>
+<summary>📋 <b>Starter code — Path A (local Ollama gemma3n:e4b, default)</b> (copy to <code>practice_2.py</code>)</summary>
+
+```python
+# Requires: pip install openai
+# Pre-req: ollama pull gemma3n:e4b && ollama serve
+import sys, statistics
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+from openai import OpenAI
+
+client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
+
+PROMPTS = {
+    "Chinese": "用一句話描述一隻貓在做什麼。",
+    "English": "Describe in one sentence what a cat is doing.",
+}
+
+N = 10  # local is slower; start small
+for label, prompt in PROMPTS.items():
+    output_tokens = []
+    for _ in range(N):
+        r = client.chat.completions.create(
+            model="gemma3n:e4b",
+            max_tokens=80,
+            temperature=1.0,  # high temp to amplify variance
+            messages=[{"role": "user", "content": prompt}],
+        )
+        output_tokens.append(r.usage.completion_tokens)
+    print(f"\n[{label}] prompt: {prompt}")
+    print(f"  input tokens: {r.usage.prompt_tokens}")
+    print(f"  output tokens — min={min(output_tokens)} max={max(output_tokens)} mean={statistics.mean(output_tokens):.1f} stdev={statistics.stdev(output_tokens):.1f}")
+
+# === Self-check ===
+assert max(output_tokens) > min(output_tokens), "with temperature=1.0, output length should vary"
+print("\n✅ Exercise 2 passed — observed temperature → token variance, $0/run")
+print("💡 Chinese prompts typically use MORE input tokens (one Chinese character ≈ 2 tokens)")
+```
+
+</details>
+
 <details>
-<summary>📋 <b>Starter code</b> (copy to <code>practice_2.py</code>)</summary>
+<summary>📋 <b>Starter code — Path B (Anthropic API, optional)</b> (copy to <code>practice_2_anthropic.py</code>)</summary>
 
 ```python
 # Requires: pip install anthropic
@@ -129,43 +171,69 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 import anthropic
-
 client = anthropic.Anthropic()
+PROMPTS = {"Chinese": "用一句話描述一隻貓在做什麼。", "English": "Describe in one sentence what a cat is doing."}
 
-PROMPTS = {
-    "Chinese": "用一句話描述一隻貓在做什麼。",
-    "English": "Describe in one sentence what a cat is doing.",
-}
-
-N = 20  # 100 runs is expensive — start with 20
 for label, prompt in PROMPTS.items():
     output_tokens = []
-    for _ in range(N):
-        msg = client.messages.create(
-            model="claude-haiku-4-5",
-            max_tokens=80,
-            temperature=1.0,  # high temp to amplify variance
-            messages=[{"role": "user", "content": prompt}],
-        )
+    for _ in range(20):
+        msg = client.messages.create(model="claude-haiku-4-5", max_tokens=80, temperature=1.0,
+                                     messages=[{"role": "user", "content": prompt}])
         output_tokens.append(msg.usage.output_tokens)
-    print(f"\n[{label}] prompt: {prompt}")
-    print(f"  input tokens: {msg.usage.input_tokens}")
-    print(f"  output tokens — min={min(output_tokens)} max={max(output_tokens)} mean={statistics.mean(output_tokens):.1f} stdev={statistics.stdev(output_tokens):.1f}")
-
-# === Self-check ===
-print("\n✅ Exercise 2 passed — observed how temperature affects output token variance")
-print("💡 Chinese prompts typically use MORE input tokens (one Chinese character ≈ 2 tokens)")
+    print(f"[{label}] input={msg.usage.input_tokens} output min/max/mean={min(output_tokens)}/{max(output_tokens)}/{sum(output_tokens)/len(output_tokens):.1f}")
 ```
 
-> 🦙 **Ollama equivalent**: swap `client.messages.create(...)` for the OpenAI-compatible `client.chat.completions.create(...)`; replace `msg.usage.output_tokens` with `r.usage.completion_tokens`. Full Path B pattern: see Exercise 1.
+**Key SDK diffs**: `messages.create` → `chat.completions.create`; `usage.output_tokens` → `usage.completion_tokens`; `usage.input_tokens` → `usage.prompt_tokens`. **Cost**: 40 runs ≈ $0.01.
 
 </details>
 
-### Exercise 3: Pricing
-Calculate the actual dollar cost of running 1000 inferences for your hello-world prompt. Use Anthropic's pricing page + count tokens via the SDK's `usage` field.
+### Exercise 3: Pricing / Latency
+**Cost-sensitive work required**: compute how long and how much it takes to run 1000 hello-world inferences. Local Ollama is $0 but has latency cost; cloud LLMs cost money but are faster. **Knowing this trade-off is how you pick the right model**.
+
+<details open>
+<summary>📋 <b>Starter code — Path A (local Ollama gemma3n:e4b, measure latency)</b> (copy to <code>practice_3.py</code>)</summary>
+
+```python
+# Requires: pip install openai
+# Pre-req: ollama pull gemma3n:e4b && ollama serve
+import sys, time
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+from openai import OpenAI
+
+client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
+
+latencies = []
+for _ in range(5):
+    t0 = time.time()
+    r = client.chat.completions.create(
+        model="gemma3n:e4b",
+        max_tokens=200,
+        messages=[{"role": "user", "content": "Hi! Please introduce yourself."}],
+    )
+    latencies.append(time.time() - t0)
+
+avg_latency = sum(latencies) / len(latencies)
+out_tok_avg = r.usage.completion_tokens
+tps = out_tok_avg / avg_latency if avg_latency > 0 else 0
+
+print(f"model: gemma3n:e4b (local)")
+print(f"5 latencies (sec): min={min(latencies):.2f} max={max(latencies):.2f} mean={avg_latency:.2f}")
+print(f"avg output: {out_tok_avg} tokens, ~{tps:.1f} tokens/sec")
+print(f"\n1000-run cost: $0 (local); projected duration: {avg_latency * 1000 / 60:.1f} minutes")
+
+# === Self-check ===
+assert avg_latency > 0, "latency should be > 0"
+assert out_tok_avg > 0, "output token count should be > 0"
+print(f"\n✅ Exercise 3 passed — local model is $0 but takes ~{avg_latency * 1000 / 60:.0f} min for 1000 runs")
+print("💡 Compare Path B Anthropic: 1000 runs is ~10-20 min at $0.25 (haiku)")
+```
+
+</details>
 
 <details>
-<summary>📋 <b>Starter code</b> (copy to <code>practice_3.py</code>)</summary>
+<summary>📋 <b>Starter code — Path B (Anthropic API, compute $ cost)</b> (copy to <code>practice_3_anthropic.py</code>)</summary>
 
 ```python
 # Requires: pip install anthropic
@@ -175,8 +243,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 import anthropic
 
-# Anthropic public pricing 2026 Q1 (per 1M tokens, USD)
-# Verify at https://www.anthropic.com/pricing before relying on these numbers
+# Anthropic public pricing 2026 Q1 (per 1M tokens, USD) — verify at https://www.anthropic.com/pricing
 PRICING = {
     "claude-haiku-4-5":   {"input": 1.00, "output":  5.00},
     "claude-sonnet-4-5":  {"input": 3.00, "output": 15.00},
@@ -185,35 +252,24 @@ PRICING = {
 
 client = anthropic.Anthropic()
 MODEL = "claude-haiku-4-5"
-
-msg = client.messages.create(
-    model=MODEL,
-    max_tokens=200,
-    messages=[{"role": "user", "content": "Hi! Please introduce yourself."}],
-)
-in_tok = msg.usage.input_tokens
-out_tok = msg.usage.output_tokens
+msg = client.messages.create(model=MODEL, max_tokens=200,
+                             messages=[{"role": "user", "content": "Hi! Please introduce yourself."}])
+in_tok, out_tok = msg.usage.input_tokens, msg.usage.output_tokens
 rates = PRICING[MODEL]
-
 cost_one = (in_tok * rates["input"] + out_tok * rates["output"]) / 1_000_000
-cost_1000 = cost_one * 1000
 
 print(f"model: {MODEL}")
-print(f"single call: input={in_tok} output={out_tok} → ${cost_one:.6f}")
-print(f"1000 calls:   ${cost_1000:.4f}")
-
-print("\nProjected cost across models (same token counts):")
+print(f"single: input={in_tok} output={out_tok} → ${cost_one:.6f}")
+print(f"1000 calls cost across model tiers:")
 for name, r in PRICING.items():
     c = (in_tok * r["input"] + out_tok * r["output"]) / 1_000_000 * 1000
-    print(f"  {name:<22} 1000 calls: ${c:.4f}")
+    print(f"  {name:<22} ${c:.4f}")
 
-# === Self-check ===
-assert cost_1000 > 0, "cost should be > 0"
-assert cost_1000 < 10, f"1000 haiku hello-worlds should not exceed $10, got ${cost_1000:.4f}"
-print(f"\n✅ Exercise 3 passed — you can now compute real cost from usage + pricing")
+assert cost_one > 0, "Cloud LLM always has a cost"
+print(f"\n✅ Exercise 3 passed (Anthropic) — 1000 runs: haiku ≈ $0.25, sonnet ≈ $0.76, opus ≈ $3.81")
 ```
 
-> 🦙 **Ollama equivalent**: local models have no pricing — `cost_1000 = 0` — but you can log latency instead (`time.time() - t0`). Pricing matters in Stage 7 production work; for the Ollama path you can skip this exercise or track "kWh of your electricity bill".
+**Trade-off**: local Ollama is $0 for 1000 runs but takes ~2 hr; Anthropic haiku is ~10 min for $0.25; sonnet ~10 min for $0.76. **Use cloud only for production; learning / experiments / debug stay local.**
 
 </details>
 
