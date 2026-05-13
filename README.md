@@ -31,10 +31,7 @@
 
 走完整條路線，你會從「**LLM 使用者**」進階到「**agent 系統建構者**」——能看懂 framework 在做什麼、能設計多 agent 協作、能寫自己的 MCP server。
 
-> 📍 **本 repo 角色定位**：**學習路線圖 + 145+ 資源 curation + 簡單 illustrative 案例**。
-> - 我們**不**試圖變成 chapter-length tutorial——chapter 深度教材交給 [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents) 跟其他 canonical projects（每個練習 folder 都有 📚 callout 指過去）
-> - 我們做的是**「先看路線圖、再選深度教材」**：route → depth、不是 reinvent
-> - 練習 folder 裡的 starter.py 是 70-150 行 illustrative 版（聚焦 dual-path Ollama/Anthropic SDK 對照）、不是 production tutorial
+> 🙏 **特別感謝 [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents)**：中文圈最完整的 chapter-length agent 教材（16 種 production 能力、特別是 **memory / RAG 那段**寫得最完整）。本 repo 角色是**學習路線圖 + 資源 curation**、把你送到適合的深度教材去。每個 stage / 練習 folder 都有 📚 callout 點過去。
 
 ---
 
@@ -177,17 +174,46 @@ cd awesome-agentic-ai-zh
 
 完整的相關資源（用語說明 + 常用 MCP / Skill highlight + awesome lists + 中文社群）抽到 **[RESOURCES.md](RESOURCES.md)** 避免主頁過長。
 
-直接看常用入口：
+直接看常用入口、依**情境**分組：
 
-- 🚀 **完全沒寫過 code、第一次接觸 AI agent？** → [`resources/setup-guide.md`](resources/setup-guide.md)（30-45 分鐘從零裝好）
-- 🆘 **卡在 tool calling？**（LLM 不呼叫、schema 寫不好、ReAct loop 跑不停）→ [`examples/stage-5/tool-calling-tutor/`](examples/stage-5/tool-calling-tutor/) — 可裝進 Claude Code 的 skill、自動 4-symptom diagnostic + 5-step schema 修法。雙重用途：學習者自用 + Stage 5 §5.3 SKILL.md 寫法樣板
-- 📖 **不懂某個詞？**（LLM、agent、RAG、token、MCP、Skill、向量資料庫⋯）→ [`resources/glossary.md`](resources/glossary.md) — 30 多個常出現的詞，每個 30-80 字解釋 + 哪 stage 講細的
-- 🗺️ **想搞懂為什麼有的 agent 在 terminal、有的在 Telegram、有的在 Jetson 板子？** → [`resources/agent-paradigms.md`](resources/agent-paradigms.md) — Agent 5 種型態 mental model（含 Hermes Agent + OpenClaw 具體例子）
-- 🍳 **想動手做出來**（寫 Skill / 寫 MCP server / 接 Word / 接 NotebookLM / 接 Zotero / 接本機 LLM）→ [`resources/cookbook.md`](resources/cookbook.md) — 6 個 step-by-step recipe（每個 30-50 分鐘）
-- 🔑 **MCP / Skills / Plugins 用語怎麼解釋** → [RESOURCES.md §三個核心用語](RESOURCES.md#三個核心用語mcp--skills--plugins)
-- 🔌 **接 Notion / Obsidian / Excel / GitHub 等日常工具** → [RESOURCES.md §接日常工具](RESOURCES.md#接日常工具常用-mcp-server--skill) 或完整 62 條目錄 [`resources/mcp-skills-catalog.md`](resources/mcp-skills-catalog.md)
-- 🔬 **研究 workflow + multi-LLM delegation skill 對** → [RESOURCES.md §研究工作流](RESOURCES.md#研究工作流本-repo-維護者出品)
-- 📚 **同主題的 awesome list / 中文社群** → [RESOURCES.md §同主題清單](RESOURCES.md#同主題的清單型-awesome-lists)
+### 🚀 入門 / 環境設定
+
+| 你的狀況 | 去哪 | 內容 |
+|---|---|---|
+| 完全沒寫過 code、第一次接觸 AI agent | [`resources/setup-guide.md`](resources/setup-guide.md) | 30-45 分鐘從零裝好（API key、Python、第一個 hello-world） |
+| 不知道挑哪個 LLM provider | [`resources/setup-guide.md` §A](resources/setup-guide.md#a--申請第一個-api-key約-10-分鐘) | Anthropic / OpenAI / DeepSeek / Kimi / NVIDIA NIM 對照 |
+| 同主題 awesome list / 中文社群 | [`RESOURCES.md` §同主題清單](RESOURCES.md#同主題的清單型-awesome-lists) | 5-10 分鐘逛一輪 |
+
+### 📖 概念 / 用語
+
+| 你的狀況 | 去哪 | 內容 |
+|---|---|---|
+| 不懂某個詞（LLM / agent / RAG / token / MCP / Skill / 向量資料庫…） | [`resources/glossary.md`](resources/glossary.md) | 30+ 詞、每個 30-80 字 + 哪 stage 講細的 |
+| 想搞懂 agent 為什麼有的在 terminal、有的在 Telegram、有的在 Jetson | [`resources/agent-paradigms.md`](resources/agent-paradigms.md) | 5 種 agent 型態 mental model + Hermes / OpenClaw 例子 |
+| MCP / Skills / Plugins 用語對照 | [`RESOURCES.md` §三個核心用語](RESOURCES.md#三個核心用語mcp--skills--plugins) | 1 頁速查表 |
+
+### 🛠 動手實作
+
+| 你的狀況 | 去哪 | 內容 |
+|---|---|---|
+| 想動手寫 Skill / MCP server / 接 Word / Zotero / 本機 LLM | [`resources/cookbook.md`](resources/cookbook.md) | 6 個 step-by-step recipe、每個 30-50 分鐘 |
+| 卡在 tool calling（LLM 不呼叫 / schema 寫不好 / ReAct loop 跑不停） | [`examples/stage-5/tool-calling-tutor/`](examples/stage-5/tool-calling-tutor/) | 可裝進 Claude Code 的 skill、4-symptom diagnostic |
+| 動手練習怎麼正確使用（主動 vs 被動模式） | [`docs/HOW_TO_USE.md`](docs/HOW_TO_USE.md) | 5-10 分鐘讀完、配合每個 stage 用 |
+
+### 🔌 接日常工具 / 找 MCP server
+
+| 你的狀況 | 去哪 | 規模 |
+|---|---|---|
+| 接 Notion / Obsidian / Excel / GitHub 等工具 | [`RESOURCES.md` §接日常工具](RESOURCES.md#接日常工具常用-mcp-server--skill) | 7-8 個 highlight |
+| 完整 MCP server / Skill 目錄（含星等、分類） | [`resources/mcp-skills-catalog.md`](resources/mcp-skills-catalog.md) | 62 條、6 大分類 |
+
+### 🔬 研究 / production 級
+
+| 你的狀況 | 去哪 | 內容 |
+|---|---|---|
+| 研究 workflow + multi-LLM delegation skill | [`RESOURCES.md` §研究工作流](RESOURCES.md#研究工作流本-repo-維護者出品) | 本 repo 維護者出品的 Claude Code 研究 skill 對 |
+| CLI agent 7 家對照 + production 搭配 | [`resources/cli-agents-guide.md`](resources/cli-agents-guide.md) | Track A 的核心參考、148 行 |
+| Schema 設計規則（tool calling 必看） | [`resources/schema-design-cheatsheet.md`](resources/schema-design-cheatsheet.md) | 5 條黃金規則 + 5 個 anti-pattern |
 
 ---
 

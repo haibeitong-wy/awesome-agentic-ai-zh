@@ -31,10 +31,7 @@
 
 走完这条路线，你会从“LLM 用户”进阶到“agent 系统构建者”——能看懂 framework 在做什么、能设计多 agent 协作、能写自己的 MCP server。
 
-> 📍 **本 repo 角色定位**：**学习路线图 + 145+ 资源 curation + 简单 illustrative 案例**。
-> - 我们**不**试图变成 chapter-length tutorial——chapter 深度教材交给 [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents) 跟其他 canonical projects（每个练习 folder 都有 📚 callout 指过去）
-> - 我们做的是**「先看路线图、再选深度教材」**：route → depth、不是 reinvent
-> - 练习 folder 里的 starter.py 是 70-150 行 illustrative 版（聚焦 dual-path Ollama/Anthropic SDK 对照）、不是 production tutorial
+> 🙏 **特别感谢 [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents)**：中文圈最完整的 chapter-length agent 教材（16 种 production 能力、特别是 **memory / RAG 那段**写得最完整）。本 repo 角色是**学习路线图 + 资源 curation**、把你送到适合的深度教材去。每个 stage / 练习 folder 都有 📚 callout 点过去。
 
 ---
 
@@ -158,11 +155,27 @@ cd awesome-agentic-ai-zh
 
 ## 📚 相关资源
 
-常用入口：
+常用入口、依**情境**分组：
 
-- 🚀 **完全没写过 code、第一次接触 AI agent？** → [`resources/setup-guide.zh-Hans.md`](resources/setup-guide.zh-Hans.md)（30-45 分钟从零装好）
-- 🆘 **卡在 tool calling？**（LLM 不调用、schema 写不好、ReAct loop 跑不停）→ [`examples/stage-5/tool-calling-tutor/`](examples/stage-5/tool-calling-tutor/) — 可装进 Claude Code 的 skill、自动 4-symptom diagnostic + 5-step schema 修法。双重用途：学习者自用 + Stage 5 §5.3 SKILL.md 写法样板
-- 🗺️ **想搞懂为什么有的 agent 在 terminal、有的在 Telegram、有的在 Jetson 板子？** → [`resources/agent-paradigms.zh-Hans.md`](resources/agent-paradigms.zh-Hans.md) — Agent 5 种型态 mental model（含 Hermes Agent + OpenClaw 具体例子）
+### 🚀 入门 / 环境设定
+
+| 你的状况 | 去哪 | 内容 |
+|---|---|---|
+| 完全没写过 code、第一次接触 AI agent | [`resources/setup-guide.zh-Hans.md`](resources/setup-guide.zh-Hans.md) | 30-45 分钟从零装好（API key、Python、第一个 hello-world） |
+| 不知道挑哪个 LLM provider | [`resources/setup-guide.zh-Hans.md` §A](resources/setup-guide.zh-Hans.md#a--申请第一个-api-key约-10-分钟) | Anthropic / OpenAI / DeepSeek / Kimi / NVIDIA NIM 对照 |
+
+### 📖 概念 / 用语
+
+| 你的状况 | 去哪 | 内容 |
+|---|---|---|
+| 想搞懂 agent 为什么有的在 terminal、有的在 Telegram、有的在 Jetson | [`resources/agent-paradigms.zh-Hans.md`](resources/agent-paradigms.zh-Hans.md) | 5 种 agent 型态 mental model + Hermes / OpenClaw 例子 |
+
+### 🛠 动手实作
+
+| 你的状况 | 去哪 | 内容 |
+|---|---|---|
+| 卡在 tool calling（LLM 不调用 / schema 写不好 / ReAct loop 跑不停） | [`examples/stage-5/tool-calling-tutor/`](examples/stage-5/tool-calling-tutor/) | 可装进 Claude Code 的 skill、4-symptom diagnostic |
+| 动手练习怎么正确使用（主动 vs 被动模式） | [`docs/HOW_TO_USE.md`](docs/HOW_TO_USE.md) | 5-10 分钟读完、配合每个 stage 用 |
 
 ### 三个核心用语：MCP / Skills / Plugins
 

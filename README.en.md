@@ -31,10 +31,7 @@ So we curated **134 high-quality projects** into a "from zero to advanced multi-
 
 After the main path, you go from "**LLM user**" to "**agent system builder**" — capable of designing multi-agent collaboration, writing your own MCP server, and shipping real agent systems.
 
-> 📍 **What this repo is — and what it isn't**: **a learning roadmap + 145+ curated resources + simple illustrative cases**.
-> - We **do not** try to be a chapter-length tutorial — depth material is delegated to [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents) and other canonical projects (every exercise folder has a 📚 callout pointing there)
-> - The pattern is **"roadmap first, depth-source second"** — route → depth, not reinvent
-> - Each exercise's `starter.py` is a 70-150-line illustrative version (focused on the dual-path Ollama/Anthropic SDK comparison) — not a production tutorial
+> 🙏 **Special thanks to [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents)** — the most thorough chapter-length agent tutorial in the Chinese-language ecosystem (16 production capabilities; the **memory / RAG section in particular** is the best treatment available). This repo's role is **learning roadmap + curation** — we route you to the right depth source. Every stage / exercise folder includes a 📚 callout pointing there.
 
 ---
 
@@ -176,16 +173,46 @@ Ready? [Start at Stage 0](stages/00-foundations.en.md).
 
 The full related-resources block (term definitions + daily-tool MCP/Skill highlights + awesome lists + Chinese-community resources) lives in **[RESOURCES.en.md](RESOURCES.en.md)** so this README stays focused.
 
-Common quick links:
+Common quick links, grouped by **scenario**:
 
-- 🚀 **Never written code, or first time with AI agents?** → [`resources/setup-guide.en.md`](resources/setup-guide.en.md) (30-45 minutes from zero)
-- 🆘 **Stuck on tool calling?** (LLM won't call, schema is broken, ReAct loop won't stop) → [`examples/stage-5/tool-calling-tutor/`](examples/stage-5/tool-calling-tutor/) — an installable Claude Code skill: 4-symptom diagnostic + 5-step schema fix. Dual purpose: learner aid + Stage 5 §5.3 SKILL.md authoring exemplar
-- 📖 **Don't know a term?** (LLM, agent, RAG, token, MCP, Skill, vector DB, …) → [`resources/glossary.en.md`](resources/glossary.en.md) — 30+ common terms, 30–80-word definition each + which stage covers it
-- 🗺️ **Why does one agent live in a terminal, another in Telegram, another on a Jetson board?** → [`resources/agent-paradigms.en.md`](resources/agent-paradigms.en.md) — 5 agent paradigms as a mental model (concrete examples for Hermes Agent + OpenClaw)
-- 🔑 **What MCP / Skills / Plugins mean** → [RESOURCES.en.md §three core terms](RESOURCES.en.md#three-core-terms-mcp--skills--plugins)
-- 🔌 **Connect to Notion / Obsidian / Excel / GitHub / etc.** → [RESOURCES.en.md §daily-tool integrations](RESOURCES.en.md#daily-tool-integrations-mcp-servers--skills) or full 62-entry catalog [`resources/mcp-skills-catalog.en.md`](resources/mcp-skills-catalog.en.md)
-- 🔬 **Research workflow + multi-LLM delegation pair** → [RESOURCES.en.md §research workflow](RESOURCES.en.md#research-workflow-by-the-repo-maintainer)
-- 📚 **Topic-based awesome lists / Chinese community** → [RESOURCES.en.md §topic-based](RESOURCES.en.md#topic-based-awesome-lists)
+### 🚀 Onboarding / Environment
+
+| Your situation | Where | What's there |
+|---|---|---|
+| Never written code, first time with AI agents | [`resources/setup-guide.en.md`](resources/setup-guide.en.md) | 30-45 min from zero (API key, Python, first hello-world) |
+| Not sure which LLM provider to pick | [`resources/setup-guide.en.md` §A](resources/setup-guide.en.md#a--apply-for-your-first-api-key-about-10-minutes) | Anthropic / OpenAI / DeepSeek / Kimi / NVIDIA NIM comparison |
+| Topic-based awesome lists / Chinese community | [`RESOURCES.en.md` §topic-based](RESOURCES.en.md#topic-based-awesome-lists) | 5-10 min skim |
+
+### 📖 Concepts / Terminology
+
+| Your situation | Where | What's there |
+|---|---|---|
+| Don't know a term (LLM / agent / RAG / token / MCP / Skill / vector DB…) | [`resources/glossary.en.md`](resources/glossary.en.md) | 30+ terms, 30-80 words each + which stage covers it |
+| Why some agents live in terminal vs Telegram vs Jetson | [`resources/agent-paradigms.en.md`](resources/agent-paradigms.en.md) | 5 paradigms mental model + Hermes Agent / OpenClaw examples |
+| MCP / Skills / Plugins glossary mapping | [`RESOURCES.en.md` §three core terms](RESOURCES.en.md#three-core-terms-mcp--skills--plugins) | 1-page lookup |
+
+### 🛠 Hands-on
+
+| Your situation | Where | What's there |
+|---|---|---|
+| Want to build Skill / MCP server / Word / Zotero / local LLM integration | [`resources/cookbook.en.md`](resources/cookbook.en.md) | 6 step-by-step recipes, 30-50 min each |
+| Stuck on tool calling (LLM won't call / schema broken / ReAct won't stop) | [`examples/stage-5/tool-calling-tutor/`](examples/stage-5/tool-calling-tutor/) | Claude Code installable skill, 4-symptom diagnostic |
+| How to use the hands-on exercises correctly (active vs passive mode) | [`docs/HOW_TO_USE.md`](docs/HOW_TO_USE.md) | 5-10 min read, applies to every stage |
+
+### 🔌 Daily tool integrations / Finding MCP servers
+
+| Your situation | Where | Scope |
+|---|---|---|
+| Connect to Notion / Obsidian / Excel / GitHub / etc. | [`RESOURCES.en.md` §daily-tool integrations](RESOURCES.en.md#daily-tool-integrations-mcp-servers--skills) | 7-8 highlights |
+| Full MCP server / Skill catalog (stars, categories) | [`resources/mcp-skills-catalog.en.md`](resources/mcp-skills-catalog.en.md) | 62 entries, 6 categories |
+
+### 🔬 Research / Production
+
+| Your situation | Where | What's there |
+|---|---|---|
+| Research workflow + multi-LLM delegation skill pair | [`RESOURCES.en.md` §research workflow](RESOURCES.en.md#research-workflow-by-the-repo-maintainer) | Maintainer's own Claude Code research skill set |
+| CLI agent 7-way comparison + production combos | [`resources/cli-agents-guide.en.md`](resources/cli-agents-guide.en.md) | Track A's core reference, ~148 lines |
+| Schema design rules (must-read for tool calling) | [`resources/schema-design-cheatsheet.en.md`](resources/schema-design-cheatsheet.en.md) | 5 golden rules + 5 anti-patterns |
 
 ---
 
