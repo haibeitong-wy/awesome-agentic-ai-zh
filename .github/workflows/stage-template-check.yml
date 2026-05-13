@@ -1,0 +1,25 @@
+name: Stage Template Check
+
+# 驗 stages/*.md 有所有必要 H2 section（template 對齊）。
+# REQUIRED 缺則 fail PR、EXPECTED 缺則 warning（不擋）。
+
+on:
+  pull_request:
+    paths:
+      - 'stages/**.md'
+  workflow_dispatch:
+
+jobs:
+  template:
+    name: Validate stage template structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate stage template
+        run: python scripts/check-stage-template.py
