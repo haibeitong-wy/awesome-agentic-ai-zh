@@ -10,21 +10,26 @@
 
 | Sync item | en | zh-Hans | Notes |
 |---|---|---|---|
-| **Stage 8 FULL translation** ⭐ | ✅ 545 lines (Gemini delegation, commit 3f4ea8f) | ✅ 545 lines (same) | Replaced 55-line stubs with full translations, H2 parity 16/16, all acceptance checks passed |
-| **Stage 1 pricing sync** ⭐ | ✅ Claude pricing 4.5 → 4.6/4.7 trio (Codex delegation, commit fe989bd) | ✅ same | Pricing dict + Q1→Q2 comment + expected output + print line + URL all updated |
-| Stage 8 stub mirror | ✅ created → then replaced by full translation | ✅ same | (superseded by Stage 8 full translation above) |
-| README structural | ✅ Stage 8 row + 8-stages + time + Part 5 + dual hub callout | ✅ same | Both keep their existing translated content; only structural sync |
-| Glossary §8 Agent Interfaces | ✅ 6 new entries (Computer Use / Browser Use / Sandbox / microVM / Firecracker / gVisor) | ✅ same | Translated, with backref to Stage 8 mirrors. Renumbered from §7→§8 to avoid duplicate H2 anchor |
+| **Anchor cleanup ⭐ + strict mode** | ✅ 37 broken anchors fixed (Codex delegation, commit 706d257) | ✅ same | `python scripts/check-anchors.py --strict` now exits 0. `anchor-validator.yml` flipped from warn-only to `--strict` mode |
+| **Stage 6 FULL catch-up** ⭐ | ✅ 318→576 lines (Gemini, commit 06181b6) | ✅ 321→576 lines | All new §positioning + §Memory/Reasoning/RAG advanced sections + 2024-2026 entries translated |
+| **Stage 7 FULL restructure** ⭐ | ✅ 363→298 lines (Gemini, commit 75df682) | ✅ 364→298 lines | 22 H4 blocks consolidated, 8-component harness, Benchmark Landscape, multi-agent skepticism — all synced |
+| **Stage 8 FULL translation** ⭐ | ✅ 55→545 lines (Gemini, commit 3f4ea8f) | ✅ same | Replaced stubs with full translations, H2 parity 16/16 |
+| **Stage 1 pricing sync** ⭐ | ✅ Claude pricing 4.5 → 4.6/4.7 trio (Codex, commit fe989bd) | ✅ same | Pricing dict + Q1→Q2 comment + expected output + print line + URL all updated |
+| README structural | ✅ Stage 8 row + 8-stages + time + Part 5 + dual hub callout (commits d3c0119 / cbf4d12 / 21d9c28) | ✅ same | |
+| Glossary §8 Agent Interfaces | ✅ 6 new entries (commits cbf4d12 / 21d9c28) | ✅ same | Renumbered from §7→§8 to avoid duplicate H2 anchor |
 
 ---
 
 ## 🚧 Deferred — future session priorities
 
-### ~~🔴 HIGH — Stage 8 full translation~~ ✅ COMPLETED (commit 3f4ea8f, Gemini delegation)
+### ~~🔴 HIGH — Stage 8 full translation~~ ✅ COMPLETED (commit 3f4ea8f, Gemini)
+### ~~🔴 HIGH — Stage 7 refactor sync~~ ✅ COMPLETED (commit 75df682, Gemini)
+### ~~🔴 HIGH — Stage 6 catch-up~~ ✅ COMPLETED (commit 06181b6, Gemini)
+### ~~🟢 LOW — Anchor cleanup + strict mode~~ ✅ COMPLETED (commit 706d257, Codex)
 
-Stage 8 full translation completed via Gemini delegation. Both `stages/08-agent-interfaces.en.md`
-and `stages/08-agent-interfaces.zh-Hans.md` now contain 545 lines of full translation matching
-the 546-line zh-TW canonical. All H2 parity checks pass. ~~Original task moved to Done.~~
+All HIGH-priority backlog items now resolved via Codex + Gemini delegations.
+Stage 6/7/8 mirrors all match canonical structure (H2 parity, no banned phrases,
+no traditional Chinese residue). Anchor validator now runs in strict mode.
 
 ### 🔴 HIGH — Stage 6 catch-up
 
