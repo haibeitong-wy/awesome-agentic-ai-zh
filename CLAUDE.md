@@ -2,6 +2,30 @@
 
 > Standing instructions for any AI agent (Claude, Codex, Gemini) working on this repo. Read this **first** before touching exercises or model recommendations.
 
+## 📍 Repo positioning — read before adding anything
+
+**This repo's role**: **learning roadmap + 145+ curated resources + simple illustrative cases.**
+
+**Benchmark for "what we are NOT"**: [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents) is the canonical chapter-length zh-TW depth tutorial (16 production capabilities, chapter format). **We don't compete with it; we route to it.**
+
+**Implications when contributing**:
+
+| Decision | Rule |
+|---|---|
+| New stage-level exercise folder | OK if it adds **a roadmap node + dual-path SDK demo + 1-line punchline**. 70-150 lines starter is the right size. |
+| Expanding a starter beyond ~150 lines | **Push back**. If it's growing into chapter-length, add a 📚 callout pointing to hello-agents instead. |
+| Adding a 5th `extension` to README | Diminishing return. Keep README tight (under ~200 lines); extra depth goes to the 📚 callout. |
+| New resource (lib / paper / tool / framework) | Almost always YES — add to the relevant `精選 Projects` section or `resources/` catalog. Curation is the primary value. |
+| New chapter-length tutorial inside this repo | **Push back**. If the topic deserves chapter-length, the right move is: write a 1-page summary + simple illustrative case + 📚 callout to a canonical source (hello-agents / Anthropic Cookbook / framework's own docs). |
+| Trilingual mirror priority | zh-TW canonical first; en + zh-Hans mirror when capacity allows. Don't block shipping waiting for 3-lang. |
+
+**One-line summary**: **route → depth, not reinvent**. Every exercise folder ends with 📚 "want chapter-length? go to hello-agents §X + [extra ref]".
+
+**Existing examples of this pattern** (as of 2026-05-13):
+- All Stage 3 / 4 / 6 / 7 example READMEs have the 📚 callout (20 folders × 1 callout)
+- Main README + 3-lang mirror have the positioning statement near 🎯 Why this exists section
+- `tracks/cli/` is outline-only on purpose (CLI exercises are bash/markdown/config, not Python SDK; doesn't fit the dual-path frame — that's correct)
+
 ## Canonical Ollama models (verified against user's `ollama list`)
 
 | Model tag | When to use | Notes |

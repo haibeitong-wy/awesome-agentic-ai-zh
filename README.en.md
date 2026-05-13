@@ -31,6 +31,11 @@ So we curated **134 high-quality projects** into a "from zero to advanced multi-
 
 After the main path, you go from "**LLM user**" to "**agent system builder**" — capable of designing multi-agent collaboration, writing your own MCP server, and shipping real agent systems.
 
+> 📍 **What this repo is — and what it isn't**: **a learning roadmap + 145+ curated resources + simple illustrative cases**.
+> - We **do not** try to be a chapter-length tutorial — depth material is delegated to [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents) and other canonical projects (every exercise folder has a 📚 callout pointing there)
+> - The pattern is **"roadmap first, depth-source second"** — route → depth, not reinvent
+> - Each exercise's `starter.py` is a 70-150-line illustrative version (focused on the dual-path Ollama/Anthropic SDK comparison) — not a production tutorial
+
 ---
 
 ## 📋 Table of Contents

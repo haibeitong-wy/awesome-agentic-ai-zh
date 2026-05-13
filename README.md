@@ -31,6 +31,11 @@
 
 走完整條路線，你會從「**LLM 使用者**」進階到「**agent 系統建構者**」——能看懂 framework 在做什麼、能設計多 agent 協作、能寫自己的 MCP server。
 
+> 📍 **本 repo 角色定位**：**學習路線圖 + 145+ 資源 curation + 簡單 illustrative 案例**。
+> - 我們**不**試圖變成 chapter-length tutorial——chapter 深度教材交給 [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents) 跟其他 canonical projects（每個練習 folder 都有 📚 callout 指過去）
+> - 我們做的是**「先看路線圖、再選深度教材」**：route → depth、不是 reinvent
+> - 練習 folder 裡的 starter.py 是 70-150 行 illustrative 版（聚焦 dual-path Ollama/Anthropic SDK 對照）、不是 production tutorial
+
 ---
 
 ## 📋 目錄
