@@ -406,8 +406,6 @@ text = msg.content[0].text
 
 **進階做法**：把這 5 輪輸出全存進 csv、Stage 7 練習 2 會教怎麼把這變成 eval harness 量化「prompt 改善了多少」。
 
-</details>
-
 ## 🎯 精選 Projects
 
 ### [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)

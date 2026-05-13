@@ -90,7 +90,43 @@ except json.JSONDecodeError:
 print(f"\n✅ Exercise 1 passed — same question, three different personas / formats / tones")
 ```
 
-> 🟦 **Anthropic Path B**: switch the import + client (`import anthropic; client = anthropic.Anthropic()`) and call `client.messages.create(model="claude-haiku-4-5", system=system, messages=[...], max_tokens=200)` (note: `system=` is a parameter, not part of `messages`). Use `msg.content[0].text` for the response. **Cost**: ~$0.003 / 3 personas. Claude follows system prompts more strictly than gemma3n:e4b.
+</details>
+
+<details>
+<summary>📋 <b>Starter code — Path B (Anthropic API, optional)</b> (copy to <code>practice_1_anthropic.py</code>)</summary>
+
+```python
+# Requires: pip install anthropic
+import sys, json
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+import anthropic
+client = anthropic.Anthropic()
+
+SYSTEM_PROMPTS = {
+    "Strict lawyer": "You are a precise contract lawyer. Cite statute numbers, avoid subjective adjectives.",
+    "Kindergarten teacher": "You are a kind kindergarten teacher speaking to a 5-year-old. Use analogies, colloquial language, under 80 words.",
+    "JSON machine": "Reply only in JSON. schema: {\"answer\": string, \"confidence\": float}",
+}
+USER_MSG = "Explain what a lease agreement is."
+
+outputs = {}
+for label, system in SYSTEM_PROMPTS.items():
+    # Anthropic uses `system=` parameter (not part of messages array)
+    msg = client.messages.create(model="claude-haiku-4-5", max_tokens=200,
+                                 system=system, messages=[{"role": "user", "content": USER_MSG}])
+    outputs[label] = msg.content[0].text
+    print(f"\n--- [{label}] ---")
+    print(outputs[label])
+
+# Self-check (same JSON-shape assert; schema is cross-backend)
+json_output = outputs["JSON machine"]
+assert "{" in json_output and "}" in json_output
+print(f"\n✅ Exercise 1 passed (Anthropic)")
+```
+
+**Key difference**: Anthropic uses `system=` parameter; OpenAI/Ollama puts system in messages array. Claude follows system prompts more strictly than gemma3n:e4b — the "Strict lawyer" persona will actually cite statute numbers. **Cost**: ~$0.003 / 3 personas.
 
 </details>
 
@@ -168,7 +204,33 @@ print(f"\n✅ Exercise 2 passed — 0-shot {c0}/{n}, 3-shot {c3}/{n}")
 assert c3 >= c0, f"expected 3-shot ≥ 0-shot, got {c3} < {c0}"
 ```
 
-> 🦙 **Ollama equivalent**: few-shot prompts typically lift small models (gemma3n:e4b) by an even **larger** margin — smaller models depend more on examples for calibration. SDK swap matches Exercise 1 Path B.
+</details>
+
+<details>
+<summary>📋 <b>Starter code — Path B (Anthropic API, optional)</b> (copy to <code>practice_2_anthropic.py</code>)</summary>
+
+```python
+# Requires: pip install anthropic
+import sys
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+import anthropic
+client = anthropic.Anthropic()
+
+# Same TEST_SET / FEW_SHOT_EXAMPLES as Path A — only the classify() body changes:
+def classify(text: str, *, use_few_shot: bool) -> str:
+    prefix = FEW_SHOT_EXAMPLES + "\n" if use_few_shot else ""
+    msg = client.messages.create(
+        model="claude-haiku-4-5",
+        max_tokens=10,
+        messages=[{"role": "user", "content": f"{prefix}input: {text}\noutput:"}],
+    )
+    return msg.content[0].text.strip().splitlines()[0]
+# Rest of TEST_SET / FEW_SHOT_EXAMPLES / evaluate() stays identical to Path A
+```
+
+**Cost**: 12 calls ≈ $0.005. Claude is usually accurate at 0-shot already, so the few-shot lift is smaller than on gemma3n:e4b — that contrast is the actual teaching point.
 
 </details>
 
@@ -236,7 +298,25 @@ assert ans_b == ANSWER or ans_c == ANSWER, "B (step-by-step) or C (CoT example) 
 print(f"\n✅ Exercise 3 passed — {correct}/3 correct")
 ```
 
-> 🦙 **Ollama equivalent**: CoT is **essential** for small models like gemma3n:e4b — without step-by-step they fail this almost completely. Use this exercise to measure how strongly each model depends on CoT.
+</details>
+
+<details>
+<summary>📋 <b>Starter code — Path B (Anthropic API, optional)</b> (copy to <code>practice_3_anthropic.py</code>)</summary>
+
+Same logic as Path A, just swap the client and `ask()`:
+
+```python
+import anthropic
+client = anthropic.Anthropic()
+
+def ask(prompt: str) -> str:
+    msg = client.messages.create(model="claude-haiku-4-5", max_tokens=300,
+                                 messages=[{"role": "user", "content": prompt}])
+    return msg.content[0].text
+# Rest (QUESTION, ANSWER, COT_EXAMPLE, extract_number, 3 calls, assert) stays identical
+```
+
+**Claude typically gets 3/3 right** including the plain-prompt baseline — that contrast with gemma3n:e4b (where CoT is essential) is the actual teaching point. **Cost**: 3 calls ≈ $0.002.
 
 </details>
 
@@ -290,7 +370,26 @@ print(f"💡 Observe: v1 ({v1_len} chars) is typically looser than v5 ({v5_len} 
 print("💡 The 5 dimensions: (1) target audience (2) format (3) length (4) example demand (5) banned words")
 ```
 
-> 🦙 **Ollama equivalent**: running 5 refine iterations on gemma3n:e4b is especially instructive — you'll watch "v1 vague" struggle to produce anything useful and "v5 +bans" show the biggest jump. Small models are highly sensitive to prompt quality, which makes them an excellent sparring partner for prompt engineering.
+</details>
+
+<details>
+<summary>📋 <b>Starter code — Path B (Anthropic API, optional)</b> (copy to <code>practice_4_anthropic.py</code>)</summary>
+
+Same loop and PROMPTS as Path A, with Anthropic SDK:
+
+```python
+import anthropic
+client = anthropic.Anthropic()
+
+outputs = {}
+for label, prompt in PROMPTS.items():
+    msg = client.messages.create(model="claude-haiku-4-5", max_tokens=200,
+                                 messages=[{"role": "user", "content": prompt}])
+    outputs[label] = msg.content[0].text
+# Rest (length compare, banned-word assert) stays identical
+```
+
+**Cost**: 5 calls ≈ $0.002. **Claude's v1 is already coherent** so the v5 lift is smaller; gemma3n:e4b makes the lift more dramatic.
 
 </details>
 
