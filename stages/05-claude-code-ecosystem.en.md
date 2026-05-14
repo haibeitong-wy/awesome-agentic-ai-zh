@@ -6,6 +6,8 @@
 
 > 💡 This entire stage revolves around 4 keywords (**MCP / Skills / Plugins / Marketplace**) → if you're not familiar with them, first check out [`resources/glossary.en.md` §5](../resources/glossary.en.md#5-claude-code-ecosystem).
 
+**👥 Shared Hub**: This stage is used by both Track A (CLI Power User) and Track B (Agent Builder). Stage 5 and [Stage 8 — Agent Interfaces](08-agent-interfaces.en.md) are the two central hubs of this curriculum.
+
 > 📌 **This stage is used by both tracks**:
 > - **Track A (CLI Power User)**: A2 uses [5.1 (Claude Code Basics)](#51--claude-code-basics); A3 uses [5.2 (MCP)](#52--mcpmodel-context-protocol--foundation) + selectively uses [5.3 (Skills)](#53--skillsclaude-codes-behavior-layer--the-most-critical-layer-of-the-claude-code-ecosystem) and [5.4 (Plugins)](#54--plugins--marketplaces) (A3's Exercise CLI-12 will teach you how to package CLAUDE.md and commands into a plugin). The reading perspective is "**how to get work done with Claude Code**."
 > - **Track B (Agent Builder)**: Treats the entire stage as a deep dive into "**how Claude Code works internally**," from 5.1 all the way to 5.4.

@@ -4,10 +4,10 @@
 
 ⏱ **Estimated time**: 2 weeks (approx. 10 hours)
 
-> 💡 This stage is dense with terminology (**RAG / vector database / embedding / chunking / hybrid search / reranking…**). If you're unfamiliar, first check out [`resources/glossary.md` §3](../resources/glossary.md#3-memory--retrieval--rag).
+> 💡 This stage is dense with terminology (**RAG / vector database / embedding / chunking / hybrid search / reranking…**). If you're unfamiliar, first check out [`resources/glossary.en.md` §3](../resources/glossary.en.md#3-memory--retrieval--rag).
 
 > 📋 **Chapter structure**: What is Context Engineering (positioning) + Concept comparison tables ×2 → Learning Objectives → Entry Conditions → Required Reading → Unit Guide → Chunking → Three patterns of Memory design → Advanced Memory (CoALA / Generative Agents / **2024-2026 Overview**) → Full version of Reflexion → Advanced Reasoning (Path 1 prompt-based + **Path 2 o1/R1/R2/Opus 4.7/GPT-5.5 trained-in**) → Advanced RAG Techniques (GraphRAG / Contextual Retrieval / Hybrid Search / Query Trans / Self-improving / RAPTOR / **2024-2026 Overview incl. MiA-RAG / A-RAG / MegaRAG**) → Hands-on Exercises → Recommended Tools → Featured Projects → Self-Check
-> 🔑 **Key Terms**: See [`resources/glossary.md` §3](../resources/glossary.md#3-memory--retrieval--rag) (memory / RAG / embedding / chunking / reranking)
+> 🔑 **Key Terms**: See [`resources/glossary.en.md` §3](../resources/glossary.en.md#3-memory--retrieval--rag) (memory / RAG / embedding / chunking / reranking)
 
 ## 🎯 What is Context Engineering (First, let's position it)
 
@@ -187,7 +187,7 @@ This is the mental model to build before the exercises—exercises 1-5 below run
 
 > 💡 **Track B Focus**: When you write a multi-agent system in Stage 7, each agent will have both "its own memory" and "shared memory"—the required pattern is usually a **hybrid of 2 + 3**. Master all three patterns in this stage so you don't get stuck on multi-agent memory design in Stage 7.
 
-## 🧬 Advanced Memory — 2024-2025 Concepts + Overview ⭐ Optional for Track B
+## 🧬 Advanced Memory — 2024-2026 Concepts + Overview ⭐ Optional for Track B
 
 The three patterns above are at the **implementation level**—below are the **conceptual level + latest works**. You'll get more out of this after completing the above.
 
@@ -288,7 +288,7 @@ Stage 3 §Reflection (Basic version)      Stage 6 This section (Full version)
 > - To understand "how reflection accumulates across sessions, how agents learn from the past" → This section
 > - To see how reflection is used in production agents (Cursor / Claude Code) → [Stage 5 §5.6 Harness Internals](05-claude-code-ecosystem.md#56--dissecting-claude-code-sourcea-reference-harness-implementation-track-b-must-read)
 
-## 🤔 Advanced Reasoning / Reflection — 2024-2025 Trends ⭐ Both tracks should read
+## 🤔 Advanced Reasoning / Reflection — 2024-2026 Trends ⭐ Both tracks should read
 
 Reflexion is **prompt-based reflection**—the LLM corrects itself during inference. In 2024-2025, a **second path** emerged: **training reflection into the model itself** (OpenAI **o1** / DeepSeek **R1**). You should know both paths.
 

@@ -187,7 +187,7 @@ Chunking 进阶思考：
 
 > 💡 **Track B 重点**：你 Stage 7 写 multi-agent 时，每个 agent 都会有「自己的 memory」+「shared memory」双层——需要的 pattern 通常是 **2 + 3 混用**。先在本 stage 把 3 种 pattern 跑透，到 Stage 7 才不会被 multi-agent memory 设计卡住。
 
-## 🧬 进阶 Memory — 2024-2025 观念 + 纵览 ⭐ Track B 选读
+## 🧬 进阶 Memory — 2024-2026 观念 + 纵览 ⭐ Track B 选读
 
 上面 3 种 pattern 是**实作层**——下面是**观念层 + 最新作品**。学完上面再回来看会更有感。
 
@@ -287,7 +287,7 @@ Stage 3 §反思（基本版）                Stage 6 本节（完整版）
 > - 想理解「反思怎么跨 session 累积、agent 怎么从过去学教训」→ 本节
 > - 想看 production agent 内怎么用反思（Cursor / Claude Code）→ [Stage 5 §5.6 Harness Internals](05-claude-code-ecosystem.md#56--claude-code-source-解剖reference-harness-implementation-track-b-必看)
 
-## 🤔 进阶 Reasoning / Reflection — 2024-2025 思潮 ⭐ 两个 track 都看
+## 🤔 进阶 Reasoning / Reflection — 2024-2026 思潮 ⭐ 两个 track 都看
 
 Reflexion 是 **prompt-based reflection**——LLM 在 inference 时自己改自己。2024-2025 出现了**第二条路**：**训练时就把 reflection 练进 model**（OpenAI **o1** / DeepSeek **R1**）。两条路你都该知道。
 

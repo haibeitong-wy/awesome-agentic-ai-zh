@@ -68,7 +68,7 @@ After completing this stage, you will be able to:
 - **For Track B**: Use `browser-use` and E2B to embed environmental interactions and sandbox isolation into your own agents.
 - Design with 4 safety patterns (approval gate, sandbox, human-in-the-loop, output filter) to prevent injection attacks.
 
-## 🚪 Prerequisites
+## 🚪 Entry Conditions
 
 You should have already:
 

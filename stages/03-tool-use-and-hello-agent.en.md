@@ -113,7 +113,7 @@ After completing this stage, you will be able to:
 - Write a multi-step ReAct agent and let it decide when to stop.
 - Distinguish which problems require tool use and which can be solved with a pure prompt.
 
-## 🚪 Prerequisites
+## 🚪 Entry Conditions
 
 You should already have:
 - Access to Claude / OpenAI / Gemini API (Stage 1).

@@ -6,6 +6,8 @@
 
 > 💡 整個 stage 圍繞 4 個關鍵詞（**MCP / Skills / Plugins / Marketplace**）展開 → 不熟先翻 [`resources/glossary.md` §5](../resources/glossary.md#5-claude-code-生態)。
 
+**👥 共用 hub**：本 stage 是 Track A（CLI Power User）+ Track B（Agent Builder）兩條路徑的共用中心。Stage 5 跟 [Stage 8 — Agent Interfaces](08-agent-interfaces.md) 是 curriculum 的兩個 hub。
+
 > 📌 **這個 stage 兩條軌都用**：
 > - **Track A（CLI Power User）**：A2 用 [5.1（Claude Code 基礎）](#51--claude-code-基礎)；A3 用 [5.2（MCP）](#52--mcpmodel-context-protocol-基礎) + 選擇性用到 [5.3（Skills）](#53--skillsclaude-code-的行為層-claude-code-生態最關鍵的一層) 跟 [5.4（Plugins）](#54--plugins-與-marketplaces)（A3 的 動手練習 CLI-12 會教把 CLAUDE.md 跟 commands 打包成 plugin）。讀的角度是「**怎麼用 Claude Code 把工作做好**」
 > - **Track B（Agent Builder）**：把整個 stage 當「**Claude Code 內部怎麼運作**」的深度學習，從 5.1 完整走到 5.4
