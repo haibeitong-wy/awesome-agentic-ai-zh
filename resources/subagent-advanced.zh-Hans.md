@@ -191,6 +191,11 @@ description: Use PROACTIVELY before commits touching auth or payment code. Check
 
 ## §3 自制 subagent 的 debug 工具
 
+> 📌 **跟 [Stage 5.5 §易混淆 5 条 Gotcha](../stages/05-claude-code-ecosystem.zh-Hans.md#55--subagentsclaude-code-原生-multi-agent-机制-2025-新功能) 角度不同**——
+> 5.5 Gotcha 是 "**best-practice-oriented**"：写 subagent 时就要注意的事
+> 这节 5 切点是 "**debug-oriented**"：subagent **已经跑坏了**该从哪里查
+> 内容有 3 条重叠（tools / model / memory）但视角不同，可分开读
+
 写了 `.claude/agents/<name>.md`，结果不如预期——下面是 debug 的 5 个切点：
 
 ### 切点 1: 确认 Claude Code 看得到你的 agent

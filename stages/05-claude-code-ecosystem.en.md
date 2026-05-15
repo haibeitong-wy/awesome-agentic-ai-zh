@@ -596,6 +596,30 @@ How does the main session know which subagent to dispatch? It reads the **`descr
 | 4 | **A subagent has no "I said X earlier" memory** | Every dispatch starts with a **fresh context** and cannot see the main session conversation. The prompt must be self-contained; do not reference "the Y we just discussed" |
 | 5 | **Subagents also consume hooks** | PreToolUse / PostToolUse (intercept scripts before / after tool execution) also **fire** inside subagents. Account for this when setting hooks |
 
+#### Subagent Overall Pros & Cons (read after the tables above for a summary)
+
+**5 pros** (why they exist):
+
+| Pro | How it helps |
+|---|---|
+| **Context isolation** | Keeps the main session window clean; a subagent can scan large files or long logs without pushing the main session's working memory out |
+| **Tool allowlist** | Limit the subagent to Read / Grep only (no file writes / no Bash) = safer sandbox |
+| **Model override** | Use Haiku for simple tasks and Opus for hard ones; mix models to save cost. Even if the main session is Opus, a subagent can use Haiku |
+| **Parallel spawn** | Spawn N subagents from one prompt and run them in parallel; wall-clock time ÷ N (useful for auditing 4 files at once)|
+| **Specialized prompt** | `code-reviewer` always reviews code, with a description fixed to "Use PROACTIVELY when commit"; small talk does not drift it |
+
+**5 cons** (when it is not worth it):
+
+| Con | Impact |
+|---|---|
+| **Spawn has overhead** | For tasks < 5 minutes, doing it yourself is faster; subagent startup costs time and tokens too |
+| **No cross-call memory** | Every spawn starts a fresh context and cannot see "the X we just discussed"; the prompt must be self-contained |
+| **Only one return message** | A subagent is "send it out, then get one report back"; it cannot have a back-and-forth with you, so it is a poor fit for tasks needing step-by-step feedback |
+| **Token cost N ×** | Spawning 4 = 4x tokens; calculate the ROI of parallelism (less time, more money)|
+| **Debug has one more layer** | When something fails, it is unclear whether to blame the main-session description, the subagent system prompt, or the prompt itself. See [advanced §3 debug 5 entry points](../resources/subagent-advanced.en.md#3-debugging-tools-for-custom-subagents)|
+
+> 📌 **1-line judgement**: Use a subagent when the task is **≥ 5 minutes** + **can be fully specified in one brief** (no back-and-forth needed) + **one final result is enough** (no step-by-step feedback needed); otherwise run it yourself.
+
 
 <details>
 <summary>👉 Concrete subagent file example (the easiest to start with)</summary>

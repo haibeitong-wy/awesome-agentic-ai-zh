@@ -21,7 +21,7 @@ Each recipe uses the same 4-part structure:
 
 > 💡 **How to actually dispatch a subagent**: in your Claude Code terminal conversation, **type or paste the prompt template directly**. That is all. Claude sees the instruction, automatically uses the Task tool (Claude Code’s internal dispatch mechanism) to find the right subagent, runs it, and returns a short summary to the main session. **No slash command or special syntax is required**.
 >
-> 📌 **Subagent vs slash command**: slash commands such as `/help`, `/compact`, and `/agents` run built-in Claude Code functions. A subagent is a “child Claude” dispatched to run an independent task and report back to the main session. `/agents` lists currently available subagents; it is not how you invoke a subagent.
+> 📌 **Subagent vs slash command**: `/agents` is a list command, **not how you invoke a subagent**. To dispatch a subagent, type ordinary prompt text directly. For complete comparison tables (subagent vs skill / vs slash command / description router), see [Stage 5.5 §Common Confusing Concepts Clarified](../stages/05-claude-code-ecosystem.en.md#55--subagents-claude-codes-native-multi-agent-mechanism--2025-new-feature).
 
 ---
 

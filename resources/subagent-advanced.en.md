@@ -191,6 +191,11 @@ main session
 
 ## §3 Debugging Tools for Custom Subagents
 
+> 📌 **Different angle from [Stage 5.5 §Clarifying 5 Gotchas](../stages/05-claude-code-ecosystem.en.md#55--subagents-claude-codes-native-multi-agent-mechanism--2025-new-feature)**:
+> Stage 5.5 Gotchas are **best-practice-oriented**: things to pay attention to when writing a subagent
+> This section's 5 entry points are **debug-oriented**: where to look after a subagent has already broken
+> 3 topics overlap (tools / model / memory), but the angle differs; read both for full coverage
+
 You wrote `.claude/agents/<name>.md`, but the result is not what you expected. Here are 5 debug entry points:
 
 ### Debug entry point 1: Confirm Claude Code can see your agent
