@@ -596,6 +596,8 @@ Plugin
 | 4 | **Subagent 沒「我之前說過 X」記憶** | 每次派遣都是**全新 context**、看不到主 session 對話。Prompt 要 self-contained、不能 reference「我們剛討論的 Y」 |
 | 5 | **Subagent 也吃 hook** | PreToolUse / PostToolUse（工具執行前 / 後的攔截腳本）在 subagent 內**也會 fire**。設 hook 時要想到這層 |
 
+> 📋 **準備自己寫 subagent / 組合多個 / debug 跑壞的？** → [`resources/subagent-advanced.md`](../resources/subagent-advanced.md)（description 寫法 4 個 bug 對照、composition 3 種 pattern、debug 5 切點）
+
 
 <details>
 <summary>👉 具體 subagent 檔案範例（最簡單入門）</summary>
