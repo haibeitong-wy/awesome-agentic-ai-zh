@@ -18,6 +18,7 @@
 [![EN](https://img.shields.io/badge/lang-English-blue?style=flat)](README.en.md)
 ![GitHub stars](https://img.shields.io/github/stars/WenyuChiou/awesome-agentic-ai-zh?style=flat&logo=github)
 ![GitHub forks](https://img.shields.io/github/forks/WenyuChiou/awesome-agentic-ai-zh?style=flat&logo=github)
+[![線上文件站](https://img.shields.io/badge/線上文件站-Pages-2ea44f?style=flat)](https://wenyuchiou.github.io/awesome-agentic-ai-zh/)
 
 </div>
 

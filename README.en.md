@@ -16,6 +16,7 @@
 [![EN](https://img.shields.io/badge/lang-English-blue)](README.en.md)
 ![GitHub stars](https://img.shields.io/github/stars/WenyuChiou/awesome-agentic-ai-zh?logo=github)
 ![GitHub forks](https://img.shields.io/github/forks/WenyuChiou/awesome-agentic-ai-zh?logo=github)
+[![Docs site](https://img.shields.io/badge/docs-Pages-2ea44f)](https://wenyuchiou.github.io/awesome-agentic-ai-zh/)
 
 > **English companion. The zh-TW [README.md](README.md) is canonical** — content is curated in zh-TW first; this page mirrors it for English readers.
 
