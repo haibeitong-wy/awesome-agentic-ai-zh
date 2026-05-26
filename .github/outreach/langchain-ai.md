@@ -1,17 +1,18 @@
 # Outreach: LangChain ecosystem (langchain-ai / kyrolabs/awesome-langchain)
 
-> **Status**: not contacted · **Channel**: GitHub issue/PR
+> **Status**: not contacted · **Channel**: GitHub PR
 > **Primary lang**: en (with zh as bonus)
-> **Last updated**: 2026-05-09
+> **Last updated**: 2026-05-26 (refreshed — stats, 8-stage structure, correct section target)
 > **Repos**:
 > - https://github.com/langchain-ai/langchain (main repo)
 > - https://github.com/kyrolabs/awesome-langchain (community awesome list ★9k+)
 
-**Why this target**: LangChain is the gateway agent framework for ~80% of zh-language developers. Our Stage 4 covers it; our §11 catalog now includes Langchain-Chatchat (★37k) and the Chinese LangChain getting-started guide. Cross-link is natural.
+**Why this target**: LangChain is the gateway agent framework for ~80% of zh-language developers. Our Stage 4 covers it; our §11 catalog now includes Langchain-Chatchat (★37k) and the Chinese LangChain getting-started guide (which **already lives in the same section** we're targeting — see below). Cross-link is natural.
 
 **Pitch angle**:
 - For `langchain-ai/langchain` itself: too big a target; aim instead at the **community awesome list** (`kyrolabs/awesome-langchain`).
 - For `kyrolabs/awesome-langchain`: we're a multilingual learning-order complement to their flat catalog.
+- **Target section confirmed (2026-05-26)**: `## Learn → ### Notebooks`. Precedent: `liaokongVFX/LangChain-Chinese-Getting-Started-Guide` already sits there. There is **no** "Tutorials & Learning Resources" section in the current README; do not propose one.
 
 **Their counter-value**: ★9k exposure to LangChain-curious developers worldwide.
 
@@ -22,27 +23,22 @@
 ```
 LangChain learners often ask: "I have the docs, but where do I actually start?"
 
-Built a 7-stage trilingual learning roadmap (zh-TW · zh-Hans · en). Stage 4 walks
-through LangChain / LangGraph / AutoGen with cost & time estimates per step.
-145+ curated projects · MIT · ★525 week 1.
+Built an 8-stage trilingual learning roadmap (zh-TW · zh-Hans · en). Stage 4
+walks through LangChain / LangGraph / AutoGen / CrewAI / Smolagents with
+prerequisites and time estimates. 145+ projects · MIT · ★1.7k.
 
 🔗 github.com/WenyuChiou/awesome-agentic-ai-zh
 ```
 
 ## Variant 2 — GitHub PR to kyrolabs/awesome-langchain (200-300 words)
 
-**PR title**: Add awesome-agentic-ai-zh to "Tutorials & Learning Resources"
+**PR title**: Add awesome-agentic-ai-zh (trilingual learning roadmap) to Learn → Notebooks
 
-**Diff**:
+**Diff** (against `## Learn → ### Notebooks`, after the `liaokongVFX/LangChain-Chinese-Getting-Started-Guide` line — keeps the two zh-ecosystem learning resources adjacent):
 
 ```diff
-+ - [`WenyuChiou/awesome-agentic-ai-zh`](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-+   — Trilingual (zh-TW · zh-Hans · en) 7-stage learning roadmap for agentic AI.
-+   Stage 4 covers LangChain / LangGraph / AutoGen with prerequisites, time
-+   estimates, and hands-on exercises. Catalog includes 62 MCP servers / Skills
-+   grouped by 14 use cases, with a dedicated section for the Chinese-language
-+   ecosystem (Langchain-Chatchat, LangChain Chinese getting-started guide,
-+   Qwen-Agent, Coze).
+  - [LangChain Chinese Getting Started Guide](https://github.com/liaokongVFX/LangChain-Chinese-Getting-Started-Guide): Chinese LangChain Tutorial for Beginners ![GitHub Repo stars](https://img.shields.io/github/stars/liaokongVFX/LangChain-Chinese-Getting-Started-Guide?style=social)
++ - [WenyuChiou/awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh): Trilingual (zh-TW / zh-Hans / en) 8-stage learning roadmap for agentic AI — Stage 4 walks through LangChain, LangGraph, AutoGen, CrewAI, Smolagents with prerequisites, time estimates, and hands-on exercises ![GitHub Repo stars](https://img.shields.io/github/stars/WenyuChiou/awesome-agentic-ai-zh?style=social)
 ```
 
 **PR description**:
@@ -50,32 +46,19 @@ through LangChain / LangGraph / AutoGen with cost & time estimates per step.
 ```markdown
 Hi kyrolabs maintainers,
 
-I'm proposing addition of [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-to the "Tutorials" or "Learning Resources" section of awesome-langchain.
+Proposing addition of [WenyuChiou/awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh) to **Learn → Notebooks**, next to the existing `liaokongVFX/LangChain-Chinese-Getting-Started-Guide` entry (same zh-learning surface).
 
 **Why this is a good fit**:
-- Trilingual (zh-TW canonical, zh-Hans, English) — fills a gap for non-English
-  learners
-- Stage 4 specifically walks through LangChain / LangGraph / AutoGen with
-  prerequisites, time estimates, and hands-on exercises
-- §11 of our catalog has 7 Chinese-ecosystem entries including
-  `chatchat-space/Langchain-Chatchat` (★37k) and `liaokongVFX/LangChain-Chinese-
-  Getting-Started-Guide`
+- Trilingual (zh-TW canonical · zh-Hans · en — all three fully maintained, not MT) — fills a gap for non-English learners
+- **Stage 4 (Agent Frameworks)** walks new developers through **LangChain / LangGraph / AutoGen / CrewAI / Smolagents** with prerequisites, time estimates, and hands-on exercises
+- §11 of the catalog has 7 Chinese-ecosystem entries including `chatchat-space/Langchain-Chatchat` (★37k) and the LangChain Chinese Getting Started Guide that's already in your list
+- Stage 5 covers the Claude Code / MCP / Skills layer; Stage 8 covers Agent Interfaces (Computer Use / Browser / Sandbox). Together with the catalog this is the complement-to-LangChain-docs that doesn't currently exist in zh
 
-**What this is NOT**:
-- Not a competing awesome-list (we're a learning-order roadmap; readers
-  graduate to your flat catalog after Stage 4)
-- Not LangChain-only — covers Stage 0 foundations, MCP, multi-agent, and
-  production
+**Stats (2026-05-26)**: ★1.7k · 191 forks · 5,090 unique visitors (14d) · 1,316 unique cloners (14d) · 3 community contributors. MIT licensed. Rendered docs at https://wenyuchiou.github.io/awesome-agentic-ai-zh/. CI runs banned-word + link-rot + anchor-integrity lints on every PR.
 
-**Stats (week 1)**: ★525 / 50 forks / 3,185 unique visitors / 1,099 clones /
-408 unique cloners / 3 community contributors. MIT licensed. CI runs banned-
-word + link-rot lint on every PR.
+If a different section or shape works better, happy to redirect. Thanks for maintaining awesome-langchain.
 
-If this isn't the right section or shape, please redirect. Thanks for
-maintaining awesome-langchain.
-
-— Wenyu Chiou (PhD candidate · Lehigh CEE, individual maintainer)
+— Wenyu Chiou (individual maintainer)
 ```
 
 ## Variant 3 — Email to LangChain DevRel (150 words)
@@ -83,13 +66,13 @@ maintaining awesome-langchain.
 ```
 Hi LangChain team,
 
-I built awesome-agentic-ai-zh — a trilingual (zh-TW / zh-Hans / en) 7-stage
-learning roadmap for agentic AI. ★525 in week 1, 3,185 unique visitors,
-heavy zh-language community traction (top referrer is Threads at 42%).
+I built awesome-agentic-ai-zh — a trilingual (zh-TW / zh-Hans / en) 8-stage
+learning roadmap for agentic AI. ★1.7k, 5k unique visitors / 14 days, heavy
+zh-language community traction (top external referrer is Threads).
 
-Stage 4 specifically walks new developers through LangChain → LangGraph
-→ AutoGen with prerequisites and cost/time estimates per step. Designed
-to bridge "I know Python" to "I can build a working agent."
+Stage 4 walks new developers through LangChain → LangGraph → AutoGen →
+CrewAI → Smolagents with prerequisites and time estimates per step.
+Designed to bridge "I know Python" to "I can build a working agent."
 
 Two questions:
 1. Is there a LangChain-side surface where this would fit (Learn, blog,
@@ -107,9 +90,14 @@ No expectation, just opening dialogue.
 ## Notes
 
 - **First target**: kyrolabs/awesome-langchain (community awesome list, lower
-  barrier to merge)
+  barrier to merge). **Section: `Learn → Notebooks`**, not "Tutorials" (no such
+  section exists in the current README — verified 2026-05-26).
 - **Second target**: LangChain blog/docs (higher signal but harder to land)
 - Avoid pitching `langchain-ai/langchain` itself directly — too big, signal is
   drowned out
 - LangSmith / LangGraph teams are separate — different DevRel; don't pitch all
   three at once
+- **Stat snapshot is per-PR-day** — refresh `★`, `forks`, `unique visitors`,
+  `clones` with `gh repo view --json stargazerCount,forkCount` + `gh api
+  repos/.../traffic/views,clones` on the day you submit. Stale stats in a PR
+  body read as careless.
