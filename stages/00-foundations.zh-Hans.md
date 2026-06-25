@@ -26,6 +26,7 @@
 - 用 git：clone、branch、commit、push、基本冲突处理
 - 用 REST API：发 GET/POST、解析 JSON、处理 auth header
 - 读写 YAML 跟 JSON
+- ht test
 
 ## 🛠 动手练习
 
