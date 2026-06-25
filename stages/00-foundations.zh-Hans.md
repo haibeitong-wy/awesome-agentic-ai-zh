@@ -14,6 +14,7 @@
 - 用 git 做 clone、commit、push，并处理基本的 merge 冲突
 - 在自己的操作系统上使用命令行（cd、ls、mkdir、执行 script）
 - 看懂 YAML / JSON 文件
+- if test
 
 → **直接跳到 [Stage 1](01-llm-basics.zh-Hans.md)**。
 
